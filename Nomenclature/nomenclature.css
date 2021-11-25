@@ -88,10 +88,15 @@ body
 .sidenav a {font-size: 18px;}
 }
 
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
 form{
-    position: absolute;
-	top: 40%;
-	left: 40%;
 	width: 200px;
 	height:100px;
 }

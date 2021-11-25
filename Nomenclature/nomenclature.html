@@ -31,53 +31,55 @@
         </span>
         </noscript>
 
-      <FORM name="inp_data">
-        <table border="1">
-          <tr>
-        <td>Первая точка</td>
-        <td><input maxLength=2 name=s1 size=3 placeholder="13"></td><td>°</td>
-        <td><input maxLength=2 name=s2 size=2 placeholder="5"></td><td>'</td>
-        <td><input maxLength=2 name=s3 size=2 placeholder="21"></td><td>'</td>
-        <td>
-            <select name=s4 size=1>
-                <option value=0 selected>с.ш</option>
-                <option value=1>ю.ш</option>
-            </select></td>
-        </tr>
-          <tr>
-        <td>Долгота</td>
-        <td><input maxLength=3 name=d1 size=3 placeholder="25"></td><td>°</td>
-        <td><input maxLength=2 name=d2 size=2 placeholder="19"></td><td>'</td>
-        <td><input maxLength=2 name=d3 size=2 placeholder="02"></td><td>&quot;</td>
-        <td>
-            <select name=d4 size=1>
-                <option value=0 selected>в.д.</option>
-                <option value=1>з.д.</option>
-            </select></td>
-        </tr>
-          <tr>
-        <td>Масштаб</td>
-            <td colspan=6><select name=m1 size=1> 
-                <option value=0>1:50 000</option> 
-                <option selected  value=1>1:100 000</option>
-                <option value=2>1:200 000</option> 
-                <option value=3>1:500 000</option>
-                <option value=4>1:1 000 000</option></select></td><td>&nbsp;</td>
-          </tr>
-          <tr>
-        <td>&nbsp;</td>
-            <td colspan=6>
-                <input class = "calculate" name=src_btn onclick=SearchClick(inp_data) type=button value="Перевести"></td>      
-        <td>&nbsp;</td>
+        <div class="container">
+          <form name="inp_data">
+            <table border="1">
+              <tr>
+            <td>Широты</td>
+            <td><input maxLength=2 name=s1 size=3 placeholder="13"></td><td>°</td>
+            <td><input maxLength=2 name=s2 size=2 placeholder="5"></td><td>'</td>
+            <td><input maxLength=2 name=s3 size=2 placeholder="21"></td><td>'</td>
+            <td>
+                <select name=s4 size=1>
+                    <option value=0 selected>с.ш</option>
+                    <option value=1>ю.ш</option>
+                </select></td>
             </tr>
-        
-          </table>
-        
-        <div class="res"><strong>Результат: </strong> <span id=result_text>
-        </span>
+              <tr>
+            <td>Долгота</td>
+            <td><input maxLength=3 name=d1 size=3 placeholder="25"></td><td>°</td>
+            <td><input maxLength=2 name=d2 size=2 placeholder="19"></td><td>'</td>
+            <td><input maxLength=2 name=d3 size=2 placeholder="02"></td><td>&quot;</td>
+            <td>
+                <select name=d4 size=1>
+                    <option value=0 selected>в.д.</option>
+                    <option value=1>з.д.</option>
+                </select></td>
+            </tr>
+              <tr>
+            <td>Масштаб</td>
+                <td colspan=6><select name=m1 size=1> 
+                    <option value=0>1:50 000</option> 
+                    <option selected  value=1>1:100 000</option>
+                    <option value=2>1:200 000</option> 
+                    <option value=3>1:500 000</option>
+                    <option value=4>1:1 000 000</option></select></td><td>&nbsp;</td>
+              </tr>
+              <tr>
+            <td>&nbsp;</td>
+                <td colspan=6>
+                    <input class = "calculate" name=src_btn onclick=SearchClick(inp_data) type=button value="Перевести"></td>      
+            <td>&nbsp;</td>
+                </tr>
+            
+              </table>
+            
+            <div class="res"><strong>Результат: </strong> <span id=result_text>
+            </span>
+            </div>
+            
+            </form>
         </div>
-        
-        </form>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
       <script src="../main.js"></script>
