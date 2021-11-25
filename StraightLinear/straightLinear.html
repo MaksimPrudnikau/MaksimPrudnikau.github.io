@@ -37,18 +37,18 @@
             <tbody>
                 <tr>
                     <td>Первая точка</td>
-                    <td colspan="3"><input class="point" type="number" name="x" placeholder="X (м)"/></td>
-                    <td colspan="3"><input class="point" type="number" name="y" placeholder="Y (м)"/></td>
+                    <td colspan="3" class="point"><input class="point" name="x" placeholder="X (м)"/></td>
+                    <td colspan="3" class="point"><input class="point" name="y" placeholder="Y (м)"/></td>
                 </tr>
                 <tr>
                     <td>Дирекционный угол</td>
-                    <td colspan="2"><input type="number" name="grad" maxlength="3"/></td>
-                    <td colspan="2"><input type="number" name="min" maxlength="2"/></td>
-                    <td colspan="2"><input type="number" name="sec" maxlength="2"/></td>
+                    <td colspan="2"><input class = "dir" name="grad" maxlength="3"/></td>
+                    <td colspan="2"><input class = "dir" name="min" maxlength="2"/></td>
+                    <td colspan="2"><input class = "dir" name="sec" maxlength="2"/></td>
                 </tr>
                 <tr>
                     <td>Расстояние</td>
-                    <td colspan="6"><input class="length" type="number" name="dlina" step="0.001"/></td>
+                    <td colspan="6" class="length"><input class="length" name="dlina" step="0.001"/></td>
                 </tr>
                 <tr>
                     <td colspan="7" class="calc"><input class = "calculate" onclick=StraightLinear(inp_data) name=src_btn type=button value="Рассчитать"></td></td>
