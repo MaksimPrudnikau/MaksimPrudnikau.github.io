@@ -1,3 +1,2 @@
-# MaksimPrudnikau.github.io
-**Дипломная работа**
+# Дипломная работа
 [Сайт](https://maksimprudnikau.github.io)
