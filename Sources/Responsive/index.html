@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Geomaks</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+
+	</head>
+	<body class="is-preload" onload="init()" >
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Максим Прудников</h1>
+							<p>Software Engineer</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Оглавление</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Рассчет</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">Обо мне</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://vk.com/amaxymanderr" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://github.com/MaksimPrudnikau" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:maksimprudnikau@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Привет! Я <strong>Максим</strong>, студент лучшего вуза <strong>БНТУ</strong><br />
+								Геодезия и аэрокосмические геотехнологии</a></h2>
+								<p>Геодезические библиотеки теперь могут быть в вебе! <br> GeoMaks - первый среди них</p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">Начать</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+							<canvas id="qtcanvas" oncontextmenu="event.preventDefault()" contenteditable="true"></canvas>
+						  
+							  <script type='text/javascript'>
+								  function init() {
+									var spinner = document.querySelector('#qtspinner');
+									var canvas = document.querySelector('#qtcanvas');
+									var status = document.querySelector('#qtstatus');	
+						  
+									var qtLoader = QtLoader({
+										canvasElements : [canvas],
+										showLoader: function(loaderStatus) {
+											spinner.style.display = 'block';
+											canvas.style.display = 'none';
+											status.innerHTML = loaderStatus + "...";
+										},
+										showError: function(errorText) {
+											status.innerHTML = errorText;
+											spinner.style.display = 'block';
+											canvas.style.display = 'none';
+										},
+										showExit: function() {
+											status.innerHTML = "Application exit";
+											if (qtLoader.exitCode !== undefined)
+												status.innerHTML += " with code " + qtLoader.exitCode;
+											if (qtLoader.exitText !== undefined)
+												status.innerHTML += " (" + qtLoader.exitText + ")";
+											spinner.style.display = 'block';
+											canvas.style.display = 'none';
+										},
+										showCanvas: function() {
+											spinner.style.display = 'none';
+											canvas.style.display = 'block';
+										},
+									});
+									qtLoader.loadEmscriptenModule("NewQtProj");
+								}
+							  </script>
+							  <script type="text/javascript" src="qtloader.js"></script>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Обо мне</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+
+							<p>Мне 20 лет и я учусь на 4 курсе факультета транспортных коммуникаций БНТУ. 
+							Увлечение программированием появилось ещё в средней школе, а в университете оно переросло из просто хобби в настоящую мечту -
+							стать программистом. Впервые в истории кафедры создал среду для проведения турниров по геодезии на высокоуровневых языках
+							программирования. <br>Я искренне верю, что за программированием будущее. </p>
+
+						</div>
+					</section>
+		<!-- Footer -->
+			<div id="footer">
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; 2017 - 2022 geomaks.com - All Rights Reserved.
+							Last Updated : 12/19/2021</li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
