@@ -1,0 +1,44 @@
+
+Sources/Source C++ code/.vs/CMake Overview
+*.json
+*.sqlite
+Sources/Source C++ code/.vs/Source C++ code/v17/.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+Sources/Source C++ code/out/build/x64-Debug/.ninja_deps
+Sources/Source C++ code/out/build/x64-Debug/.ninja_log
+*.ninja
+*.cmake
+Sources/Source C++ code/out/build/x64-Debug/CMakeCache.txt
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeDetermineCompilerABI_C.bin
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeDetermineCompilerABI_CXX.bin
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.c
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.exe
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/cmake.check_cache
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/CMakeOutput.log
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/embed.manifest
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/intermediate.manifest
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/main.cpp.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/manifest.rc
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/manifest.res
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/FiveHundredThousandMap/FiveHundredThousandMap.cpp.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/OneMillionMap/OneMillionMap.cpp.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/TwoHundredThousandMap/TwoHundredThousandMap.cpp.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/WidgetMap.cpp.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/vc140.pdb
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/foo.h
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.c
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.obj
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/TargetDirectories.txt
+Sources/Source C++ code/out/build/x64-Debug/Maps.exe
+Sources/Source C++ code/out/build/x64-Debug/Maps.ilk
+Sources/Source C++ code/out/build/x64-Debug/Maps.pdb
+Sources/Source C++ code/out/build/x64-Debug/Testing/Temporary/LastTest.log
+Sources/Source C++ code/out/build/x64-Debug/VSInheritEnvironments.txt
