@@ -4,8 +4,11 @@
 
 #ifndef MAPS_MAP_H
 #define MAPS_MAP_H
+#pragma once
 #include "WidgetMap.h"
-#include "string"
+#include <locale>
+#include <codecvt>
+#include <string>
 const std::string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 struct Map
@@ -19,9 +22,15 @@ struct Map
     }
 
 protected:
+
     virtual Angle getLengthByLatitude() = 0;
     virtual Angle getLengthByLongitude() = 0;
 
+    static std::string WstringToString(const std::wstring& source)
+    {
+        std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+        return converter.to_bytes(source);
+    }
     static Angle roundToClosest(Angle angle, Angle length)
     {
         Angle closestAngle;

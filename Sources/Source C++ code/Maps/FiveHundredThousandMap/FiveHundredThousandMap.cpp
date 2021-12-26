@@ -3,7 +3,9 @@
 //
 
 #include "FiveHundredThousandMap.h"
-#include "string"
+#include <locale>
+#include <codecvt>
+#include <string>
 using namespace std;
 
 // Formed by dividing the millionth sheet into four parts,
@@ -36,6 +38,6 @@ std::string FiveHundredThousandMap::GetNomenclature(Point point, Border borders)
     {
         name = L"-?";
     }
-    
-    return narrow(name);
+
+    return WstringToString(name);
 }

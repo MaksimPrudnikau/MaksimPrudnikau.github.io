@@ -28,9 +28,9 @@ struct WidgetMap
     
     WidgetMap() = default;
 
-    WidgetMap(std::vector<WidgetMap> maps)
+    WidgetMap(const std::vector<WidgetMap>& maps)
     {
-        for (auto map : maps)
+        for (const auto& map : maps)
         {
             Name += map.Name;
             borders = map.borders;

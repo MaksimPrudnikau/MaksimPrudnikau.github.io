@@ -7,7 +7,6 @@
 
 #include <string>
 #include <cmath>
-#include "Strings.h"
 
 struct Angle
 {
@@ -78,8 +77,8 @@ struct Angle
 
     Angle operator - (Angle second) const
     {
-        unsigned short _degrees = degrees - second.degrees;
-        unsigned short _minutes = minutes;
+        int _degrees = degrees - second.degrees;
+        int _minutes = minutes;
         double _seconds = seconds;
         if (degrees - second.degrees < 0)
         {
@@ -97,6 +96,9 @@ struct Angle
             _minutes--;
             _seconds = seconds - second.seconds + 60;
         }
+        _degrees = std::abs(_degrees);
+        _minutes = std::abs(_minutes);
+        _seconds = std::abs(_seconds);
 
         return Angle((unsigned short)_degrees, (unsigned short)_minutes, _seconds) + Angle(0, 0, 0);
     }
