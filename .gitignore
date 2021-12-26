@@ -1,20 +1,81 @@
-
+/Source/Source C++ code/out/*
+/Source/Source C++ code/cmake-build-debub/*
+/Source/Source C++ code/.vs/*
+/Source/Source C++ code/.idea/*
+.gitignore.bak
+Sources/Source C++ code/.idea/.name
+Sources/Source C++ code/.idea/misc.xml
+Sources/Source C++ code/.idea/modules.xml
+Sources/Source C++ code/.idea/Source C++ code.iml
+Sources/Source C++ code/.idea/vcs.xml
 Sources/Source C++ code/.vs/CMake Overview
-*.json
-*.sqlite
+Sources/Source C++ code/.vs/cmake.db
+Sources/Source C++ code/.vs/ProjectSettings.json
+Sources/Source C++ code/.vs/slnx.sqlite
+Sources/Source C++ code/.vs/Source C++ code/project-colors.json
 Sources/Source C++ code/.vs/Source C++ code/v17/.suo
-*.db
-*.db-shm
-*.db-wal
-*.opendb
-*.ipch
+Sources/Source C++ code/.vs/Source C++ code/v17/Browse.VC.db
+Sources/Source C++ code/.vs/Source C++ code/v17/ipch/AutoPCH/be3c2d64aa07817d/WIDGETMAP.ipch
+Sources/Source C++ code/.vs/Source C++ code/v17/ipch/AutoPCH/d71bdc26f6c48ae9/MAIN.ipch
+Sources/Source C++ code/.vs/VSWorkspaceState.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/query/cache-v2
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/query/codemodel-v2
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/query/toolchains-v1
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/cache-v2-14f392d26a4424880154.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-be66d1da189613dd2425.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-613b69191cd01ea3b88c.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/index-2021-12-26T09-53-10-0977.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/target-Maps-Debug-d527d800ad0fbbf6ec12.json
+Sources/Source C++ code/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-284fca2d224861dffda0.json
+Sources/Source C++ code/cmake-build-debug/.ninja_deps
+Sources/Source C++ code/cmake-build-debug/.ninja_log
+Sources/Source C++ code/cmake-build-debug/build.ninja
+Sources/Source C++ code/cmake-build-debug/cmake_install.cmake
+Sources/Source C++ code/cmake-build-debug/CMakeCache.txt
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.out
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.out
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/clion-environment.txt
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/clion-log.txt
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/cmake.check_cache
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/CMakeOutput.log
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/main.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/Maps/FiveHundredThousandMap/FiveHundredThousandMap.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/Maps/OneHundredThousandMap/OneHundredThousandMap.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/Maps/OneMillionMap/OneMillionMap.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/Maps/TwoHundredThousandMap/TwoHundredThousandMap.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Maps.dir/Maps/WidgetMap.cpp.o
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/rules.ninja
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/TargetDirectories.txt
+Sources/Source C++ code/cmake-build-debug/Maps
+Sources/Source C++ code/cmake-build-debug/Testing/Temporary/LastTest.log
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/query/client-MicrosoftVS/query.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/cache-v2-099551d1a320ae040ec2.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/cmakeFiles-v1-de3aaf7cda118a2fffe1.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/codemodel-v2-1206bc89aead2dc59ca3.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/index-2021-12-26T09-47-16-0148.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/target-Maps-Debug-69a671cda42b55216898.json
+Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/toolchains-v1-dd09c07de65a75e0781a.json
 Sources/Source C++ code/out/build/x64-Debug/.ninja_deps
 Sources/Source C++ code/out/build/x64-Debug/.ninja_log
-*.ninja
-*.cmake
+Sources/Source C++ code/out/build/x64-Debug/build.ninja
+Sources/Source C++ code/out/build/x64-Debug/cmake_install.cmake
 Sources/Source C++ code/out/build/x64-Debug/CMakeCache.txt
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeCCompiler.cmake
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeCXXCompiler.cmake
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeDetermineCompilerABI_C.bin
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeDetermineCompilerABI_CXX.bin
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeRCCompiler.cmake
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CMakeSystem.cmake
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.c
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.exe
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.obj
@@ -33,6 +94,7 @@ Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/OneMillionM
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/TwoHundredThousandMap/TwoHundredThousandMap.cpp.obj
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/Maps/WidgetMap.cpp.obj
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/Maps.dir/vc140.pdb
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/rules.ninja
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/foo.h
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.c
 Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.obj

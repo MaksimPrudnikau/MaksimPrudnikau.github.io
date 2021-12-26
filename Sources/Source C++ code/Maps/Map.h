@@ -21,7 +21,6 @@ struct Map
 protected:
     virtual Angle getLengthByLatitude() = 0;
     virtual Angle getLengthByLongitude() = 0;
-    //virtual unsigned int getMatrixSize() = 0;
 
     static Angle roundToClosest(Angle angle, Angle length)
     {
@@ -36,7 +35,6 @@ protected:
 
     static Point roundToClosestLeftDown(Point point, Angle lengthLatitude, Angle lengthLongitude)
     {
-        int occurences;
         point.Latitude = roundToClosest(point.Latitude, lengthLatitude);
         point.Longitude = roundToClosest(point.Longitude, lengthLongitude);
         return point;

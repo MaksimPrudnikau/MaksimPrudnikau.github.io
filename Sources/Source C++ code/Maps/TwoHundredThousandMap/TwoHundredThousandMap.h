@@ -19,9 +19,10 @@ protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 40, 0};
     const Angle lengthByLongitude = {1, 0, 0};
+    const int MatrixSize = 6;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
-    
+
     std::string GetNomenclature(Point point, Border borders) override;
 };
 

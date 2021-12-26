@@ -39,5 +39,5 @@ std::string TwoHundredThousandMap::GetNomenclature(Point point, Border borders)
 {
     int dx = (borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad();
     int dy = floor((borders.rightDown.Longitude - previous.borders.leftDown.Longitude).ToGrad() / lengthByLongitude.ToGrad());
-    return "-" + intToRoman(dx * 6 - (6 - dy));
+    return "-" + intToRoman(dx * MatrixSize - (MatrixSize - dy));
 }
