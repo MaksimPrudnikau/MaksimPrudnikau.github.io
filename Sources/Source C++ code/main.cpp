@@ -1,14 +1,17 @@
 #include <iostream>
-#include "Maps/WidgetMap.h"
-#include "Maps/Angle.h"
+#include "Maps/Map.h"
 using namespace std;
-int main() {
+int main()
+{
+    setlocale(LC_CTYPE, "RUS");
     Point base =
     {
-            {89,55,20.01},
-            {17, 9, 20.02}
+            {53,20,36},
+            {31, 39, 29}
     };
 
-    cout << WidgetMap().GetNomenclature(base, M1_1_000_000).Name << "\n";
+    auto widget = WidgetMap::GetNomenclature(base, M1_200_000);
+    cout << widget.Name << "\n";
+    
     return 0;
 }

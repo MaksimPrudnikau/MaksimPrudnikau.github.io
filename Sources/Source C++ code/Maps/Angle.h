@@ -5,7 +5,10 @@
 #ifndef MAPS_ANGLE_H
 #define MAPS_ANGLE_H
 
+#include <string>
 #include <cmath>
+#include "Strings.h"
+
 struct Angle
 {
     unsigned short degrees = 0;
@@ -34,6 +37,14 @@ struct Angle
         return {(unsigned short)degree, (unsigned short)minute, second};
     }
 
+    bool DerivedEntirely(const Angle divider)
+    {
+        return
+            degrees % divider.degrees == 0 &&
+            minutes % divider.minutes == 0 &&
+            fmod(seconds, divider.seconds) == 0;
+    }
+
     Angle operator + (Angle second) const
     {
          unsigned short _degrees = this->degrees + second.degrees;
@@ -60,20 +71,70 @@ struct Angle
          return {_degrees, _minutes, _seconds};
     }
 
+    void operator += (Angle second)
+    {
+        *this = *this + second;
+    }
+
     Angle operator - (Angle second) const
     {
-        int _degrees = std::abs(degrees - second.degrees);
-        int _minutes = std::abs(minutes - second.minutes);
-        double _seconds = std::abs(seconds - second.seconds);
-        return {
-                (unsigned short) _degrees,
-                (unsigned short) _minutes,
-                _seconds
-        };
+        unsigned short _degrees = degrees - second.degrees;
+        unsigned short _minutes = minutes;
+        double _seconds = seconds;
+        if (degrees - second.degrees < 0)
+        {
+            return second - *this;
+        }
+
+        if (minutes - second.minutes <= 0)
+        {
+            _degrees--;
+            _minutes = minutes - second.minutes + 60;
+        }
+
+        if (seconds - second.seconds <= 0)
+        {
+            _minutes--;
+            _seconds = seconds - second.seconds + 60;
+        }
+
+        return Angle((unsigned short)_degrees, (unsigned short)_minutes, _seconds) + Angle(0, 0, 0);
     }
 
     Angle operator -= (Angle second) const {
         return *this - second;
+    }
+
+    bool operator == (Angle second) const
+    {
+        return
+            degrees == second.degrees &&
+            minutes == second.minutes &&
+            seconds == second.seconds;
+    }
+
+    bool operator < (Angle second) const
+    {
+        if (degrees < second.degrees)
+        {
+            return true;
+        }
+        else if (degrees == second.degrees)
+        {
+            if (minutes < second.minutes)
+            {
+                return true;
+            }
+            else if (minutes == second.minutes)
+            {
+                if (seconds < second.seconds)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 };
 

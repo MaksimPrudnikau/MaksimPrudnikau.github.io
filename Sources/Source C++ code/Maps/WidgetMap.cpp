@@ -4,32 +4,30 @@
 
 #include "WidgetMap.h"
 #include "OneMillionMap/OneMillionMap.h"
+#include "FiveHundredThousandMap/FiveHundredThousandMap.h"
+#include "TwoHundredThousandMap/TwoHundredThousandMap.h"
 
 using namespace std;
+
 WidgetMap WidgetMap::GetNomenclature(const Point point, const Scales scale)
 {
-    WidgetMap map;
-    switch (scale)
+    WidgetMap oneMillionMapWidget = OneMillionMap().GetWidgetMap(point);
+    if (scale == M1_1_000_000)
     {
-        case M1_2000:
-            break;
-        case M1_5000:
-            break;
-        case M1_10_000:
-            break;
-        case M1_25_000:
-            break;
-        case M1_50_000:
-            break;
-        case M1_100_000:
-            break;
-        case M1_500_000:
-            break;
-        case M1_1_000_000:
-            OneMillionMap oneMillionMap;
-            map = oneMillionMap.GetWidgetMap(point);
-            break;
+        return oneMillionMapWidget;
+    }
+    
+    WidgetMap fiveHundredThousandMapWidget = FiveHundredThousandMap().GetWidgetMap(point);
+    if (scale == M1_500_000)
+    {
+        return {{oneMillionMapWidget, fiveHundredThousandMapWidget}};
+    }
+    
+    WidgetMap twoHundredThousandMap = TwoHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
+    if (scale == M1_200_000)
+    {
+        return {{oneMillionMapWidget, twoHundredThousandMap}};
     }
 
-    return map;
+    return {};
 }

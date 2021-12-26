@@ -21,22 +21,22 @@ struct Map
 protected:
     virtual Angle getLengthByLatitude() = 0;
     virtual Angle getLengthByLongitude() = 0;
+    //virtual unsigned int getMatrixSize() = 0;
 
-    static Angle roundToClosest(Angle latitude, Angle length)
+    static Angle roundToClosest(Angle angle, Angle length)
     {
-        double latitudeInGrad = latitude.ToGrad();
-        double lengthInGrad = length.ToGrad();
-        double closestLatitude = 0;
-        while (closestLatitude + lengthInGrad < latitudeInGrad)
+        Angle closestAngle;
+        while (closestAngle + length < angle)
         {
-            closestLatitude += lengthInGrad;
-        }
+            closestAngle += length;
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
-        return Angle::ToAngle(closestLatitude);
+        return closestAngle;
     }
 
     static Point roundToClosestLeftDown(Point point, Angle lengthLatitude, Angle lengthLongitude)
     {
+        int occurences;
         point.Latitude = roundToClosest(point.Latitude, lengthLatitude);
         point.Longitude = roundToClosest(point.Longitude, lengthLongitude);
         return point;
