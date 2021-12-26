@@ -28,22 +28,6 @@ struct Angle
         return degrees + minutes / 60.0 + seconds / 3600.0;
     }
 
-    static Angle ToAngle(double grad)
-    {
-        int degree = floor(grad);
-        int minute = floor((grad - degree) * 60);
-        double second = grad - degree - Angle(0, minute, 0).ToGrad();
-        return {(unsigned short)degree, (unsigned short)minute, second};
-    }
-
-    bool DerivedEntirely(const Angle divider)
-    {
-        return
-            degrees % divider.degrees == 0 &&
-            minutes % divider.minutes == 0 &&
-            fmod(seconds, divider.seconds) == 0;
-    }
-
     Angle operator + (Angle second) const
     {
          unsigned short _degrees = this->degrees + second.degrees;
@@ -85,16 +69,32 @@ struct Angle
             return second - *this;
         }
 
-        if (minutes - second.minutes <= 0)
+        if (minutes - second.minutes < 0)
         {
-            _degrees--;
-            _minutes = minutes - second.minutes + 60;
+            if (_degrees >= 1)
+            {
+                _degrees--;
+                _minutes = minutes - second.minutes + 60;
+            }
+            else
+            {
+                _degrees = -_degrees;
+                _minutes = second.minutes - minutes;
+            }
         }
 
-        if (seconds - second.seconds <= 0)
+        if (seconds - second.seconds < 0)
         {
-            _minutes--;
-            _seconds = seconds - second.seconds + 60;
+            if (_minutes >= 1)
+            {
+                _minutes--;
+                _seconds = seconds - second.seconds + 60;
+            }
+            else
+            {
+                _minutes = -_minutes;
+                _seconds = second.seconds - seconds;
+            }
         }
         _degrees = std::abs(_degrees);
         _minutes = std::abs(_minutes);
