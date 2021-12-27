@@ -10,16 +10,16 @@
 struct TwoThousandMap : public Map
 {
     TwoThousandMap() = default;
-    explicit TwoThousandMap (WidgetMap previous) {
-        TwoThousandMap::previous = std::move(previous);
+    explicit TwoThousandMap (WidgetMap& previous) {
+        previous.Name.erase(previous.Name.length() - 1);
+        this->previous = previous;
     }
 protected:
     WidgetMap previous;
-    const Angle lengthByLatitude = {0, 1, 15};
-    const Angle lengthByLongitude = {0, 1, 52.5};
-    const unsigned int MatrixSize = 256;
-    const unsigned int RowLength = 16;
-    const unsigned int correctAnswers = 4;
+    const Angle lengthByLatitude = {0, 0, 25};
+    const Angle lengthByLongitude = {0, 0, 37.5};
+    const unsigned int MatrixSize = 9;
+    const unsigned int RowLength = 3;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 

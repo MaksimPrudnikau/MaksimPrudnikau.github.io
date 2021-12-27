@@ -11,6 +11,7 @@
 #include "TwentyFiveThousandMap/TwentyFiveThousandMap.h"
 #include "TenThousandMap/TenThousandMap.h"
 #include "FiveThousandMap/FiveThousandMap.h"
+#include "TwoThousandMap/TwoThousandMap.h"
 
 using namespace std;
 
@@ -62,6 +63,12 @@ WidgetMap WidgetMap::GetNomenclature(const Point point, const Scales scale)
     if (scale == M1_5000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap} };
+    }
+
+    WidgetMap twoThousandMap = TwoThousandMap(fiveThousandMap).GetWidgetMap(point);
+    if (scale == M1_2000)
+    {
+        return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap, twoThousandMap} };
     }
 
     return {};
