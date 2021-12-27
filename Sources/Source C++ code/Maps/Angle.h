@@ -5,6 +5,7 @@
 #ifndef MAPS_ANGLE_H
 #define MAPS_ANGLE_H
 
+#pragma once
 #include <string>
 #include <cmath>
 
@@ -145,6 +146,11 @@ struct Angle
         }
 
         return false;
+    }
+    
+    std::string ToString() const
+    {
+        return std::string();
     }
 };
 

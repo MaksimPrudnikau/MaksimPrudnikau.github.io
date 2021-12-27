@@ -10,7 +10,7 @@ int main()
             {15, 19,  22}
     };
 
-    auto widget = WidgetMap::GetNomenclature(base, M1_2000);
+    auto widget = WidgetMap::GetNomenclature(base, M1_1_000_000);
     cout << widget.Name << "\n";
     
     return 0;
