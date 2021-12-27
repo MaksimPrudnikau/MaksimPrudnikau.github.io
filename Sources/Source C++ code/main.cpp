@@ -6,11 +6,11 @@ int main()
     setlocale(LC_CTYPE, "RUS");
     Point base =
     {
-            {52, 48,37},
-            {100, 18,  41}
+            {52, 12,54},
+            {100, 44,  54}
     };
 
-    auto widget = WidgetMap::GetNomenclature(base, M1_10_000);
+    auto widget = WidgetMap::GetNomenclature(base, M1_5000);
     cout << widget.Name << "\n";
     
     return 0;
