@@ -2,16 +2,16 @@
 // Created by maksim on 12/27/21.
 //
 
-#ifndef MAPS_FIVETHOUSANDMAP_H
-#define MAPS_FIVETHOUSANDMAP_H
+#ifndef MAPS_TWOTHOUSANDMAP_H
+#define MAPS_TWOTHOUSANDMAP_H
 
 #include "../Map.h"
 
-struct FiveThousandMap : public Map
+struct TwoThousandMap : public Map
 {
-    FiveThousandMap() = default;
-    explicit FiveThousandMap (WidgetMap previous) {
-        FiveThousandMap::previous = std::move(previous);
+    TwoThousandMap() = default;
+    explicit TwoThousandMap (WidgetMap previous) {
+        TwoThousandMap::previous = std::move(previous);
     }
 protected:
     WidgetMap previous;
@@ -27,4 +27,4 @@ protected:
 };
 
 
-#endif //MAPS_FIVETHOUSANDMAP_H
+#endif //MAPS_TWOTHOUSANDMAP_H

@@ -18,6 +18,7 @@ protected:
     const Angle lengthByLatitude = {0, 5, 0};
     const Angle lengthByLongitude = {0, 7, 30};
     const int MatrixSize = 2;
+    const int correctAnswers = 4;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 

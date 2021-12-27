@@ -6,10 +6,11 @@
 
 std::string TwentyFiveThousandMap::GetNomenclature(Point point, Border borders)
 {
+
     double dx = (borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad();
     double dy = floor((borders.rightDown.Longitude - previous.borders.leftDown.Longitude).ToGrad() / lengthByLongitude.ToGrad());
     auto length = dx * MatrixSize - (MatrixSize - dy);
-    int shift = floor(length / 4.0) * 4;
+    int shift = floor(length / correctAnswers) * correctAnswers;
     int res = length - shift;
     std::wstring name;
     if (res == 1)

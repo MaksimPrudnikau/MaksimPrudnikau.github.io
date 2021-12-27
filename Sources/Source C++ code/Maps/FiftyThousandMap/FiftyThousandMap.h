@@ -18,7 +18,8 @@ protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 10, 0};
     const Angle lengthByLongitude = {0, 15, 0};
-    const int MatrixSize = 2;
+    const int correctAnswers = 4;
+    const int rowLength = 2;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 
