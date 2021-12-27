@@ -82,6 +82,10 @@ struct Angle
                 _minutes = second.minutes - minutes;
             }
         }
+        else
+        {
+            _minutes = minutes - second.minutes;
+        }
 
         if (seconds - second.seconds < 0)
         {
@@ -95,6 +99,10 @@ struct Angle
                 _minutes = -_minutes;
                 _seconds = second.seconds - seconds;
             }
+        }
+        else
+        {
+            _seconds = seconds - second.seconds;
         }
         _degrees = std::abs(_degrees);
         _minutes = std::abs(_minutes);
