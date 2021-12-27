@@ -24,7 +24,7 @@ std::string FiftyThousandMap::GetNomenclature(Point point, Border borders)
     {
         name = L"-В";
     }
-    else if (res == 4)
+    else if (res == 4 || res == 0)
     {
         name = L"-Г";
     }
