@@ -201,6 +201,7 @@ public:
         ScalesBox->addItem(QString());
         ScalesBox->addItem(QString());
         ScalesBox->addItem(QString());
+        ScalesBox->addItem(QString());
         ScalesBox->setObjectName(QString::fromUtf8("ScalesBox"));
 
         gridLayout->addWidget(ScalesBox, 2, 0, 1, 1);
@@ -233,12 +234,13 @@ public:
         CalculateButton->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214", nullptr));
         ScalesBox->setItemText(0, QCoreApplication::translate("MainWindow", "1:1 000 000", nullptr));
         ScalesBox->setItemText(1, QCoreApplication::translate("MainWindow", "1:500 000", nullptr));
-        ScalesBox->setItemText(2, QCoreApplication::translate("MainWindow", "1:100 000", nullptr));
-        ScalesBox->setItemText(3, QCoreApplication::translate("MainWindow", "1:50 000", nullptr));
-        ScalesBox->setItemText(4, QCoreApplication::translate("MainWindow", "1:25 000", nullptr));
-        ScalesBox->setItemText(5, QCoreApplication::translate("MainWindow", "1:10 000", nullptr));
-        ScalesBox->setItemText(6, QCoreApplication::translate("MainWindow", "1:5 000", nullptr));
-        ScalesBox->setItemText(7, QCoreApplication::translate("MainWindow", "1:2 000", nullptr));
+        ScalesBox->setItemText(2, QCoreApplication::translate("MainWindow", "1:200 000", nullptr));
+        ScalesBox->setItemText(3, QCoreApplication::translate("MainWindow", "1:100 000", nullptr));
+        ScalesBox->setItemText(4, QCoreApplication::translate("MainWindow", "1:50 000", nullptr));
+        ScalesBox->setItemText(5, QCoreApplication::translate("MainWindow", "1:25 000", nullptr));
+        ScalesBox->setItemText(6, QCoreApplication::translate("MainWindow", "1:10 000", nullptr));
+        ScalesBox->setItemText(7, QCoreApplication::translate("MainWindow", "1:5 000", nullptr));
+        ScalesBox->setItemText(8, QCoreApplication::translate("MainWindow", "1:2 000", nullptr));
 
     } // retranslateUi
 

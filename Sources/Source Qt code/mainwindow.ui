@@ -312,6 +312,11 @@
          </item>
          <item>
           <property name="text">
+           <string>1:200 000</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>1:100 000</string>
           </property>
          </item>
