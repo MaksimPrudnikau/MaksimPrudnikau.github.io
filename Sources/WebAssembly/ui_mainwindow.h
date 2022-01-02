@@ -71,7 +71,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         answer = new QLabel(centralwidget);
         answer->setObjectName(QString::fromUtf8("answer"));
-        answer->setGeometry(QRect(330, 110, 121, 20));
+        answer->setGeometry(QRect(330, 110, 141, 20));
         leftUpLat = new QLabel(centralwidget);
         leftUpLat->setObjectName(QString::fromUtf8("leftUpLat"));
         leftUpLat->setGeometry(QRect(250, 60, 91, 20));
