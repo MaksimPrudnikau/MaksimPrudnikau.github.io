@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.0.1, 2021-12-27T20:12:41. -->
+<!-- Written by QtCreator 6.0.1, 2022-01-02T12:03:31. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -240,8 +240,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/MyWorld/Projects/Cpp/Maps/Maps.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/MyWorld/Projects/Cpp/Maps/Maps.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Maps2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/Source Qt code/Maps.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/Source Qt code/Maps.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
