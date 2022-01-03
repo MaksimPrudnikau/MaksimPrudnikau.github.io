@@ -273,7 +273,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="Lat_sec"/>
+          <widget class="QDoubleSpinBox" name="Lat_sec">
+           <property name="maximum">
+            <double>60.000000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -294,7 +298,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="Long_sec"/>
+          <widget class="QDoubleSpinBox" name="Long_sec">
+           <property name="maximum">
+            <double>60.000000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

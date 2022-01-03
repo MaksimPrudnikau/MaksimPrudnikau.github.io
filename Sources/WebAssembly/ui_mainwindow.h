@@ -164,6 +164,7 @@ public:
 
         Lat_sec = new QDoubleSpinBox(layoutWidget);
         Lat_sec->setObjectName(QString::fromUtf8("Lat_sec"));
+        Lat_sec->setMaximum(60.000000000000000);
 
         horizontalLayout->addWidget(Lat_sec);
 
@@ -186,6 +187,7 @@ public:
 
         Long_sec = new QDoubleSpinBox(layoutWidget);
         Long_sec->setObjectName(QString::fromUtf8("Long_sec"));
+        Long_sec->setMaximum(60.000000000000000);
 
         horizontalLayout_2->addWidget(Long_sec);
 
