@@ -6,37 +6,37 @@
 
 std::string TwoThousandMap::GetNomenclature(Point point, Border borders)
 {
-    double dx = floor((borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad());
-    double dy = floor((borders.rightDown.Longitude - previous.borders.leftDown.Longitude).ToGrad() / lengthByLongitude.ToGrad());
-    int length = dx * RowLength - (RowLength - dy);
+    double dx = floor((point.Latitude - borders.leftUp.Latitude).ToGrad()) / lengthByLatitude.ToGrad();
+    double dy = floor((point.Longitude - borders.leftUp.Longitude).ToGrad()) / lengthByLongitude.ToGrad();
+    int length = dx + dy;
     std::wstring name;
     switch (length)
     {
-        case 1:
+        case 0:
             name = L"-а";
             break;
-        case 2:
+        case 1:
             name = L"-б";
             break;
-        case 3:
+        case 2:
             name = L"-в";
             break;
-        case 4:
+        case 3:
             name = L"-г";
             break;
-        case 5:
+        case 4:
             name = L"-д";
             break;
-        case 6:
+        case 5:
             name = L"-е";
             break;
-        case 7:
+        case 6:
             name = L"-ж";
             break;
-        case 8:
+        case 7:
             name = L"-з";
             break;
-        case 9:
+        case 8:
             name = L"-и";
             break;
         default:
@@ -44,4 +44,39 @@ std::string TwoThousandMap::GetNomenclature(Point point, Border borders)
     }
 
     return WstringToString(name) + ")";
+}
+
+Point TwoThousandMap::GetShift(std::string word)
+{
+    Point point;
+    const std::string letters = "абвгдежзи";
+    int number = letters.find(word) + 1;
+    int row = floor(number / rowLength);
+    int col = 1;
+
+    if (row % rowLength == 0)
+    {
+        col = rowLength;
+    }
+    else
+    {
+        while (row * rowLength + col != number)
+        {
+            col++;
+        }
+    }
+
+    row = rowLength - row - 1;
+
+    for (int i = 0; i < row; i++)
+    {
+        point.Latitude += lengthByLatitude;
+    }
+
+    for (int i = 0; i < col - 1; i++)
+    {
+        point.Longitude += lengthByLongitude;
+    }
+
+    return point;
 }

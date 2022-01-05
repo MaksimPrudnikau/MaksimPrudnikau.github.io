@@ -33,7 +33,7 @@ void MainWindow::on_CalculateButton_clicked()
 
     auto scale = Scales(ui->ScalesBox->currentIndex());
 
-    showMap(WidgetMap::GetNomenclature(base, scale), scale);
+    showMap(WidgetMap::GetNomenclature(base, scale));
 }
 
 std::string MainWindow::AngleToString(Angle angle)
@@ -50,7 +50,7 @@ std::string MainWindow::AngleToString(Angle angle)
             //+ std::to_string(angle.seconds).substr + secondSign;
 }
 
-void MainWindow::showMap(const WidgetMap& map, const Scales& scale)
+void MainWindow::showMap(const WidgetMap& map)
 {
     std::string leftUpLat = AngleToString(map.borders.leftUp.Latitude);
     std::string leftUpLong = AngleToString(map.borders.leftUp.Longitude);

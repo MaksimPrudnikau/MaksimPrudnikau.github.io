@@ -6,8 +6,10 @@
 #define MAPS_FIVEHUNDREDTHOUSANDMAP_H
 #include "../Map.h"
 
-class FiveHundredThousandMap : public Map
+struct FiveHundredThousandMap : public Map
 {
+    Point GetShift(std::string);
+private:
     const Angle lengthByLatitude = {2, 0, 0};
     const Angle lengthByLongitude = {3, 0, 0};
     Angle getLengthByLatitude() override {return lengthByLatitude;}

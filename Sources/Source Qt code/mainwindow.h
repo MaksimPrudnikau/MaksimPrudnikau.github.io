@@ -17,7 +17,7 @@ public:
 
     std::string AngleToString(Angle angle);
 
-    void showMap(const WidgetMap& map, const Scales& scale);
+    void showMap(const WidgetMap& map);
 
 signals:
     void BackToTheStartMenu();

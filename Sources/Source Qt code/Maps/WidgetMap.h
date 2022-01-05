@@ -38,6 +38,7 @@ struct WidgetMap
     }
     
     static WidgetMap GetNomenclature(Point point, Scales scale);
+    static WidgetMap GetBorders(const std::string& nomenclature, Scales scale);
 };
 
 #endif //MAPS_WIDGETMAP_H

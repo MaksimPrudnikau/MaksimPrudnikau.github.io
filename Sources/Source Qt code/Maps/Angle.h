@@ -64,7 +64,7 @@ struct Angle
         int _degrees = degrees - second.degrees;
         int _minutes = minutes;
         double _seconds = seconds;
-        if (degrees - second.degrees < 0)
+        if (*this < second)
         {
             return second - *this;
         }

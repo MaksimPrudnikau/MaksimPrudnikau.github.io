@@ -13,6 +13,7 @@ struct TwentyFiveThousandMap : public Map
     explicit TwentyFiveThousandMap (WidgetMap previous) {
         TwentyFiveThousandMap::previous = std::move(previous);
     }
+    Point GetShift(std::string);
 protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 5, 0};
