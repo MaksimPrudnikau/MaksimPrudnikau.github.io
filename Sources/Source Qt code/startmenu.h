@@ -2,7 +2,7 @@
 #define STARTMENU_H
 
 #include <QDialog>
-#include "mainwindow.h"
+#include "mapnomenclature.h"
 #include "mapborders.h"
 namespace Ui {
 class StartMenu;
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::StartMenu *ui;
-    MainWindow* mainWindow;
+    mapnomenclature* mapnomenclature;
     MapBorders* mapBorders;
 };
 

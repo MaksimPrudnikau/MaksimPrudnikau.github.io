@@ -23,7 +23,7 @@ class Ui_StartMenu
 {
 public:
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *MapNomenclature;
     QPushButton *MapBorders;
@@ -37,21 +37,20 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(120, 20, 191, 41));
         QFont font;
-        font.setFamily(QString::fromUtf8("Sylfaen"));
         font.setPointSize(22);
         label->setFont(font);
-        widget = new QWidget(StartMenu);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(60, 130, 281, 67));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(StartMenu);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 120, 351, 67));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        MapNomenclature = new QPushButton(widget);
+        MapNomenclature = new QPushButton(layoutWidget);
         MapNomenclature->setObjectName(QString::fromUtf8("MapNomenclature"));
 
         verticalLayout->addWidget(MapNomenclature);
 
-        MapBorders = new QPushButton(widget);
+        MapBorders = new QPushButton(layoutWidget);
         MapBorders->setObjectName(QString::fromUtf8("MapBorders"));
 
         verticalLayout->addWidget(MapBorders);

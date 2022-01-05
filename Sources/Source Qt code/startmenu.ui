@@ -24,7 +24,6 @@
    </property>
    <property name="font">
     <font>
-     <family>Sylfaen</family>
      <pointsize>22</pointsize>
     </font>
    </property>
@@ -32,12 +31,12 @@
     <string>GeoMaks</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>130</y>
-     <width>281</width>
+     <x>20</x>
+     <y>120</y>
+     <width>351</width>
      <height>67</height>
     </rect>
    </property>

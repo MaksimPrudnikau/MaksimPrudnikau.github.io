@@ -39,7 +39,7 @@ public:
     QFrame *upBorder;
     QLabel *leftDownLong;
     QLabel *rightDownLong;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLineEdit *nomenclature;
     QComboBox *ScalesBox;
@@ -55,7 +55,7 @@ public:
         BackToStartMenu->setGeometry(QRect(290, 20, 83, 29));
         leftUpLong = new QLabel(MapBorders);
         leftUpLong->setObjectName(QString::fromUtf8("leftUpLong"));
-        leftUpLong->setGeometry(QRect(90, 130, 91, 20));
+        leftUpLong->setGeometry(QRect(90, 130, 121, 20));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -71,7 +71,7 @@ public:
         rightBorder->setFrameShadow(QFrame::Sunken);
         rightUpLong = new QLabel(MapBorders);
         rightUpLong->setObjectName(QString::fromUtf8("rightUpLong"));
-        rightUpLong->setGeometry(QRect(220, 130, 91, 20));
+        rightUpLong->setGeometry(QRect(220, 130, 131, 20));
         sizePolicy.setHeightForWidth(rightUpLong->sizePolicy().hasHeightForWidth());
         rightUpLong->setSizePolicy(sizePolicy);
         downBorder = new QFrame(MapBorders);
@@ -81,22 +81,22 @@ public:
         downBorder->setFrameShadow(QFrame::Sunken);
         leftUpLat = new QLabel(MapBorders);
         leftUpLat->setObjectName(QString::fromUtf8("leftUpLat"));
-        leftUpLat->setGeometry(QRect(50, 150, 91, 20));
+        leftUpLat->setGeometry(QRect(10, 150, 111, 20));
         sizePolicy.setHeightForWidth(leftUpLat->sizePolicy().hasHeightForWidth());
         leftUpLat->setSizePolicy(sizePolicy);
         rightUpLat = new QLabel(MapBorders);
         rightUpLat->setObjectName(QString::fromUtf8("rightUpLat"));
-        rightUpLat->setGeometry(QRect(280, 150, 91, 20));
+        rightUpLat->setGeometry(QRect(280, 150, 111, 20));
         sizePolicy.setHeightForWidth(rightUpLat->sizePolicy().hasHeightForWidth());
         rightUpLat->setSizePolicy(sizePolicy);
         rightDownLat = new QLabel(MapBorders);
         rightDownLat->setObjectName(QString::fromUtf8("rightDownLat"));
-        rightDownLat->setGeometry(QRect(280, 250, 81, 20));
+        rightDownLat->setGeometry(QRect(280, 250, 111, 20));
         sizePolicy.setHeightForWidth(rightDownLat->sizePolicy().hasHeightForWidth());
         rightDownLat->setSizePolicy(sizePolicy);
         leftDownLat = new QLabel(MapBorders);
         leftDownLat->setObjectName(QString::fromUtf8("leftDownLat"));
-        leftDownLat->setGeometry(QRect(50, 250, 81, 20));
+        leftDownLat->setGeometry(QRect(10, 250, 101, 20));
         sizePolicy.setHeightForWidth(leftDownLat->sizePolicy().hasHeightForWidth());
         leftDownLat->setSizePolicy(sizePolicy);
         leftBorder = new QFrame(MapBorders);
@@ -111,26 +111,26 @@ public:
         upBorder->setFrameShadow(QFrame::Sunken);
         leftDownLong = new QLabel(MapBorders);
         leftDownLong->setObjectName(QString::fromUtf8("leftDownLong"));
-        leftDownLong->setGeometry(QRect(100, 270, 81, 20));
+        leftDownLong->setGeometry(QRect(100, 270, 101, 20));
         sizePolicy.setHeightForWidth(leftDownLong->sizePolicy().hasHeightForWidth());
         leftDownLong->setSizePolicy(sizePolicy);
         rightDownLong = new QLabel(MapBorders);
         rightDownLong->setObjectName(QString::fromUtf8("rightDownLong"));
-        rightDownLong->setGeometry(QRect(240, 270, 81, 20));
+        rightDownLong->setGeometry(QRect(240, 270, 111, 20));
         sizePolicy.setHeightForWidth(rightDownLong->sizePolicy().hasHeightForWidth());
         rightDownLong->setSizePolicy(sizePolicy);
-        widget = new QWidget(MapBorders);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(131, 17, 127, 101));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(MapBorders);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(110, 30, 181, 81));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        nomenclature = new QLineEdit(widget);
+        nomenclature = new QLineEdit(layoutWidget);
         nomenclature->setObjectName(QString::fromUtf8("nomenclature"));
 
         verticalLayout->addWidget(nomenclature);
 
-        ScalesBox = new QComboBox(widget);
+        ScalesBox = new QComboBox(layoutWidget);
         ScalesBox->addItem(QString());
         ScalesBox->addItem(QString());
         ScalesBox->addItem(QString());
@@ -144,7 +144,7 @@ public:
 
         verticalLayout->addWidget(ScalesBox);
 
-        CalculateButton = new QPushButton(widget);
+        CalculateButton = new QPushButton(layoutWidget);
         CalculateButton->setObjectName(QString::fromUtf8("CalculateButton"));
 
         verticalLayout->addWidget(CalculateButton);

@@ -20,8 +20,8 @@ SOURCES += \
     Maps/TwoThousandMap/TwoThousandMap.cpp \
     Maps/WidgetMap.cpp \
     main.cpp \
-    mainwindow.cpp \
     mapborders.cpp \
+    mapnomenclature.cpp \
     startmenu.cpp
 
 HEADERS += \
@@ -39,13 +39,13 @@ HEADERS += \
     Maps/TwoHundredThousandMap/TwoHundredThousandMap.h \
     Maps/TwoThousandMap/TwoThousandMap.h \
     Maps/WidgetMap.h \
-    mainwindow.h \
     mapborders.h \
+    mapnomenclature.h \
     startmenu.h
 
 FORMS += \
-    mainwindow.ui \
     mapborders.ui \
+    mapnomenclature.ui \
     startmenu.ui
 
 # Default rules for deployment.
