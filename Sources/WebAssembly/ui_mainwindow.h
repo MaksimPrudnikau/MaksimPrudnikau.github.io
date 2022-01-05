@@ -55,13 +55,14 @@ public:
     QSpinBox *Long_min;
     QDoubleSpinBox *Long_sec;
     QComboBox *ScalesBox;
+    QPushButton *BackToStartMenu;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(571, 231);
+        MainWindow->resize(571, 280);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(45);
         sizePolicy.setVerticalStretch(45);
@@ -137,7 +138,7 @@ public:
         rightBorder->setFrameShadow(QFrame::Sunken);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 20, 183, 171));
+        layoutWidget->setGeometry(QRect(10, 20, 191, 171));
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -175,7 +176,7 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         Long_deg = new QSpinBox(layoutWidget);
         Long_deg->setObjectName(QString::fromUtf8("Long_deg"));
-        Long_deg->setMaximum(89);
+        Long_deg->setMaximum(179);
 
         horizontalLayout_2->addWidget(Long_deg);
 
@@ -211,6 +212,9 @@ public:
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
+        BackToStartMenu = new QPushButton(centralwidget);
+        BackToStartMenu->setObjectName(QString::fromUtf8("BackToStartMenu"));
+        BackToStartMenu->setGeometry(QRect(480, 10, 83, 29));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -223,7 +227,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "GeoMaks", nullptr));
         answer->setText(QString());
         leftUpLat->setText(QString());
         leftUpLong->setText(QString());
@@ -244,6 +248,7 @@ public:
         ScalesBox->setItemText(7, QCoreApplication::translate("MainWindow", "1:5 000", nullptr));
         ScalesBox->setItemText(8, QCoreApplication::translate("MainWindow", "1:2 000", nullptr));
 
+        BackToStartMenu->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\320\267\320\260\320\264", nullptr));
     } // retranslateUi
 
 };
