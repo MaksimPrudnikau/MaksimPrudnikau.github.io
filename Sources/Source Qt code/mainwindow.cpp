@@ -78,3 +78,10 @@ void MainWindow::showMap(const WidgetMap& map, const Scales& scale)
 
     ui->answer->setText(QString::fromStdString(map.Name));
 }
+
+void MainWindow::on_BackToStartMenu_clicked()
+{
+    this->close();
+    emit BackToTheStartMenu();
+}
+

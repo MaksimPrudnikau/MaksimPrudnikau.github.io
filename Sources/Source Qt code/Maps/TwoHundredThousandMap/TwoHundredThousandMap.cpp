@@ -37,7 +37,7 @@ std::string intToRoman(int num) {
 
 std::string TwoHundredThousandMap::GetNomenclature(Point point, Border borders)
 {
-    int dx = (borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad();
+    int dx = floor((borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad());
     int dy = floor((borders.rightDown.Longitude - previous.borders.leftDown.Longitude).ToGrad() / lengthByLongitude.ToGrad());
     return "-" + intToRoman(dx * MatrixSize - (MatrixSize - dy));
 }

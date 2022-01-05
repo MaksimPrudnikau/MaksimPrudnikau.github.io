@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>571</width>
-    <height>231</height>
+    <height>280</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>GeoMaks</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="answer">
@@ -242,7 +242,7 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>183</width>
+      <width>191</width>
       <height>171</height>
      </rect>
     </property>
@@ -286,7 +286,7 @@
          <item>
           <widget class="QSpinBox" name="Long_deg">
            <property name="maximum">
-            <number>89</number>
+            <number>179</number>
            </property>
           </widget>
          </item>
@@ -358,6 +358,19 @@
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="BackToStartMenu">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Назад</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

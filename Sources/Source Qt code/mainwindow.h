@@ -19,8 +19,13 @@ public:
 
     void showMap(const WidgetMap& map, const Scales& scale);
 
+signals:
+    void BackToTheStartMenu();
+
 private slots:
     void on_CalculateButton_clicked();
+
+    void on_BackToStartMenu_clicked();
 
 private:
     Ui::MainWindow *ui;

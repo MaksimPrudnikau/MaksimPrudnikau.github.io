@@ -13,6 +13,7 @@ struct TenThousandMap : public Map
     explicit TenThousandMap (WidgetMap previous) {
         TenThousandMap::previous = std::move(previous);
     }
+    Point GetShift(std::string);
 protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 2, 30};

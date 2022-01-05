@@ -14,12 +14,13 @@ struct TwoThousandMap : public Map
         previous.Name.erase(previous.Name.length() - 1);
         this->previous = previous;
     }
+    Point GetShift(std::string);
 protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 0, 25};
     const Angle lengthByLongitude = {0, 0, 37.5};
     const unsigned int MatrixSize = 9;
-    const unsigned int RowLength = 3;
+    const unsigned int rowLength = 3;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 

@@ -13,12 +13,13 @@ struct FiveThousandMap : public Map
     explicit FiveThousandMap (WidgetMap previous) {
         FiveThousandMap::previous = std::move(previous);
     }
+    Point GetShift(std::string);
 protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 1, 15};
     const Angle lengthByLongitude = {0, 1, 52.5};
     const unsigned int MatrixSize = 256;
-    const unsigned int RowLength = 16;
+    const unsigned int rowLength = 16;
     const unsigned int correctAnswers = 4;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};

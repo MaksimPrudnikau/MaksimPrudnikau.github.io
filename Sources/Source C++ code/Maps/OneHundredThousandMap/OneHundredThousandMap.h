@@ -13,11 +13,12 @@ struct OneHundredThousandMap : public Map
     explicit OneHundredThousandMap (WidgetMap previous) {
         OneHundredThousandMap::previous = std::move(previous);
     }
+    Point GetShift(std::string);
 protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {0, 20, 0};
     const Angle lengthByLongitude = {0, 30, 0};
-    const unsigned int MatrixSize = 12;
+    const unsigned int rowLength = 12;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 

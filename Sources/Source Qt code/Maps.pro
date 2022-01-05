@@ -20,7 +20,9 @@ SOURCES += \
     Maps/TwoThousandMap/TwoThousandMap.cpp \
     Maps/WidgetMap.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mapborders.cpp \
+    startmenu.cpp
 
 HEADERS += \
     Maps/Angle.h \
@@ -37,10 +39,14 @@ HEADERS += \
     Maps/TwoHundredThousandMap/TwoHundredThousandMap.h \
     Maps/TwoThousandMap/TwoThousandMap.h \
     Maps/WidgetMap.h \
-    mainwindow.h
+    mainwindow.h \
+    mapborders.h \
+    startmenu.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    mapborders.ui \
+    startmenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

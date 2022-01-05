@@ -5,7 +5,6 @@
 #ifndef MAPS_ANGLE_H
 #define MAPS_ANGLE_H
 
-#pragma once
 #include <string>
 #include <cmath>
 
@@ -65,7 +64,7 @@ struct Angle
         int _degrees = degrees - second.degrees;
         int _minutes = minutes;
         double _seconds = seconds;
-        if (degrees - second.degrees < 0)
+        if (*this < second)
         {
             return second - *this;
         }
@@ -146,11 +145,6 @@ struct Angle
         }
 
         return false;
-    }
-    
-    std::string ToString() const
-    {
-        return std::string();
     }
 };
 

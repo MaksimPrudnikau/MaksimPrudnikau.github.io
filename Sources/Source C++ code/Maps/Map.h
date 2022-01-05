@@ -20,17 +20,17 @@ struct Map
         map.Name = GetNomenclature(point, map.borders);
         return map;
     }
-    
-    static std::string WstringToString(const std::wstring& source)
-    {
-        std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-        return converter.to_bytes(source);
-    }
 
 protected:
 
     virtual Angle getLengthByLatitude() = 0;
     virtual Angle getLengthByLongitude() = 0;
+
+    static std::string WstringToString(const std::wstring& source)
+    {
+        std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+        return converter.to_bytes(source);
+    }
 
     static Angle roundToClosest(Angle angle, Angle length)
     {

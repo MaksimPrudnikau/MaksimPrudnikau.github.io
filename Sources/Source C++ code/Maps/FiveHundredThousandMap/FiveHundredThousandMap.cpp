@@ -41,3 +41,46 @@ std::string FiveHundredThousandMap::GetNomenclature(Point point, Border borders)
 
     return WstringToString(name);
 }
+
+Point FiveHundredThousandMap::GetShift(std::string letters)
+{
+    Point point;
+    int latitude, longitude;
+    const char A = (char)-64;
+    const char B = (char)-63;
+    const char V = (char)-62;
+    const char G = (char)-61;
+
+    if (letters[0] == A)
+    {
+        latitude = 1;
+        longitude = 0;
+    }
+    else if (letters[0] == B)
+    {
+        latitude = 1;
+        longitude = 1;
+    }
+    else if (letters[0] == V)
+    {
+        latitude = 0;
+        longitude = 0;
+    }
+    else if (letters[0] == G)
+    {
+        latitude = 0;
+        longitude = 1;
+    }
+
+    for (size_t i = 0; i < latitude; ++i)
+    {
+        point.Latitude += lengthByLatitude;
+    }
+
+    for (size_t i = 0; i < longitude; ++i)
+    {
+        point.Longitude += lengthByLongitude;
+    }
+
+    return point;
+}

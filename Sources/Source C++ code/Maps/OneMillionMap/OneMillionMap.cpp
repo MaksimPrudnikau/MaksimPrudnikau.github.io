@@ -13,3 +13,21 @@ std::string OneMillionMap::GetNomenclature(Point point, Border borders)
      int column = floor(point.Longitude.degrees / lengthByLongitude.degrees);
      return string() +  Alphabet[letterNumber] + "-" + to_string(column + 30 + 1);
 }
+
+Point OneMillionMap::GetShift(std::vector<std::string> letters)
+{
+    Point point;
+    auto rows = Alphabet.find(letters[0]);
+    auto column = stoi(letters[1]) - 30 - 1;
+    for (size_t i = 0; i < rows; ++i)
+    {
+        point.Latitude += lengthByLatitude;
+    }
+
+    for (size_t i = 0; i < column; ++i)
+    {
+        point.Longitude += lengthByLongitude;
+    }
+
+    return point;
+}

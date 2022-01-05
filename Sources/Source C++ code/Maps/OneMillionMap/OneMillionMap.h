@@ -9,6 +9,8 @@
 
 struct OneMillionMap : public Map
 {
+    Point GetShift(std::vector<std::string>);
+
 protected:
     const Angle lengthByLatitude = {4, 0, 0};
     const Angle lengthByLongitude = {6, 0, 0};
