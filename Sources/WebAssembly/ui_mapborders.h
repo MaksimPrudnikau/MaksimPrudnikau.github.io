@@ -121,7 +121,7 @@ public:
         rightDownLong->setSizePolicy(sizePolicy);
         layoutWidget = new QWidget(MapBorders);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(110, 30, 181, 81));
+        layoutWidget->setGeometry(QRect(70, 20, 181, 101));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
