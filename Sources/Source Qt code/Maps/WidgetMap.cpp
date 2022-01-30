@@ -19,61 +19,70 @@ using namespace std;
 
 WidgetMap WidgetMap::GetNomenclature(const Point point, const Scales scale)
 {
-    WidgetMap oneMillionMapWidget = OneMillionMap().GetWidgetMap(point);
-    if (scale == M1_1_000_000)
+    try
     {
-        return oneMillionMapWidget;
-    }
-    
-    WidgetMap fiveHundredThousandMapWidget = FiveHundredThousandMap().GetWidgetMap(point);
-    if (scale == M1_500_000)
-    {
-        return {{oneMillionMapWidget, fiveHundredThousandMapWidget}};
-    }
-    
-    WidgetMap twoHundredThousandMap = TwoHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
-    if (scale == M1_200_000)
-    {
-        return {{oneMillionMapWidget, twoHundredThousandMap}};
-    }
+        WidgetMap oneMillionMapWidget = OneMillionMap().GetWidgetMap(point);
+        if (scale == M1_1_000_000)
+        {
+            return oneMillionMapWidget;
+        }
 
-    WidgetMap oneHundredThousandMap = OneHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
-    if (scale == M1_100_000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap} };
-    }
+        WidgetMap fiveHundredThousandMapWidget = FiveHundredThousandMap().GetWidgetMap(point);
+        if (scale == M1_500_000)
+        {
+            return {{oneMillionMapWidget, fiveHundredThousandMapWidget}};
+        }
 
-    WidgetMap fiftyThousandMap = FiftyThousandMap(oneHundredThousandMap).GetWidgetMap(point);
-    if (scale == M1_50_000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap} };
-    }
+        WidgetMap twoHundredThousandMap = TwoHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
+        if (scale == M1_200_000)
+        {
+            return {{oneMillionMapWidget, twoHundredThousandMap}};
+        }
 
-    WidgetMap twentyFiveThousandMap = TwentyFiveThousandMap(fiftyThousandMap).GetWidgetMap(point);
-    if (scale == M1_25_000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap} };
-    }
+        WidgetMap oneHundredThousandMap = OneHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
+        if (scale == M1_100_000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap} };
+        }
 
-    WidgetMap tenThousandMap = TenThousandMap(twentyFiveThousandMap).GetWidgetMap(point);
-    if (scale == M1_10_000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap, tenThousandMap} };
-    }
+        WidgetMap fiftyThousandMap = FiftyThousandMap(oneHundredThousandMap).GetWidgetMap(point);
+        if (scale == M1_50_000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap} };
+        }
 
-    WidgetMap fiveThousandMap = FiveThousandMap(oneHundredThousandMap).GetWidgetMap(point);
-    if (scale == M1_5000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap} };
-    }
+        WidgetMap twentyFiveThousandMap = TwentyFiveThousandMap(fiftyThousandMap).GetWidgetMap(point);
+        if (scale == M1_25_000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap} };
+        }
 
-    WidgetMap twoThousandMap = TwoThousandMap(fiveThousandMap).GetWidgetMap(point);
-    if (scale == M1_2000)
-    {
-        return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap, twoThousandMap} };
-    }
+        WidgetMap tenThousandMap = TenThousandMap(twentyFiveThousandMap).GetWidgetMap(point);
+        if (scale == M1_10_000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap, tenThousandMap} };
+        }
 
-    return {};
+        WidgetMap fiveThousandMap = FiveThousandMap(oneHundredThousandMap).GetWidgetMap(point);
+        if (scale == M1_5000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap} };
+        }
+
+        WidgetMap twoThousandMap = TwoThousandMap(fiveThousandMap).GetWidgetMap(point);
+        if (scale == M1_2000)
+        {
+            return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap, twoThousandMap} };
+        }
+
+        return {};
+    }
+    catch(int)
+    {
+        auto res = WidgetMap();
+        res.Name = "?";
+        return res;
+    }
 }
 
 const vector<string> split(string s, string delimiter) 
@@ -94,6 +103,9 @@ const vector<string> split(string s, string delimiter)
 
 const Point GetOneMillionMap(const vector<string>& letters)
 {
+    if (letters.size() != 2)
+        throw L"Неверный формат номенклатуры";
+
     Point point =
     {
         {0, 0, 0.001},
@@ -107,6 +119,9 @@ const Point GetOneMillionMap(const vector<string>& letters)
 
 const Point GetFiveHundredThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 3)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetOneMillionMap(letters);
     point += FiveHundredThousandMap().GetShift(letters.at(2));
     return point;
@@ -114,6 +129,9 @@ const Point GetFiveHundredThousandMap(const vector<string>& letters)
 
 const Point GetTwoHundredThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 3)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetOneMillionMap(letters);
     point += TwoHundredThousandMap().GetShift(letters.at(2));
     return point;
@@ -121,6 +139,8 @@ const Point GetTwoHundredThousandMap(const vector<string>& letters)
 
 const Point GetOneHundredThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 3)
+        throw L"Неверный формат номенклатуры";
     Point point = GetOneMillionMap(letters);
     point += OneHundredThousandMap().GetShift(letters.at(2));
 
@@ -129,6 +149,9 @@ const Point GetOneHundredThousandMap(const vector<string>& letters)
 
 const Point GetFiftyThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 4)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetOneHundredThousandMap(letters);
     point += FiftyThousandMap().GetShift(letters.at(3));
     return point;
@@ -136,6 +159,9 @@ const Point GetFiftyThousandMap(const vector<string>& letters)
 
 const Point GetTwentyFiveThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 5)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetFiftyThousandMap(letters);
     point += TwentyFiveThousandMap().GetShift(letters.at(4));
     return point;
@@ -143,6 +169,9 @@ const Point GetTwentyFiveThousandMap(const vector<string>& letters)
 
 const Point GetTenThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 6)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetTwentyFiveThousandMap(letters);
     point += TenThousandMap().GetShift(letters.at(5));
     return point;
@@ -150,6 +179,9 @@ const Point GetTenThousandMap(const vector<string>& letters)
 
 const Point GetFiveThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 4)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetOneHundredThousandMap(letters);
     auto element = letters.at(3);
     element.erase(0, 1);
@@ -160,6 +192,9 @@ const Point GetFiveThousandMap(const vector<string>& letters)
 
 const Point GetTwoThousandMap(const vector<string>& letters)
 {
+    if (letters.size() != 5)
+        throw L"Неверный формат номенклатуры";
+
     Point point = GetFiveThousandMap(letters);
     auto element = letters.at(4);
     element.erase(element.size() - 1, 1);
@@ -176,41 +211,56 @@ WidgetMap WidgetMap::GetBorders(const string& nomenclature, Scales scale)
         return errorMap;
     }
 
-    const string delimiter = "-";
-    auto letters = split(nomenclature, delimiter);
-    Point point;
-    switch (scale)
+    try
     {
-    case M1_2000:
-        point = GetTwoThousandMap(letters);
-        break;
-    case M1_5000:
-        point = GetFiveThousandMap(letters);
-        break;
-    case M1_10_000:
-        point = GetTenThousandMap(letters);
-        break;
-    case M1_25_000:
-        point = GetTwentyFiveThousandMap(letters);
-        break;
-    case M1_50_000:
-        point = GetFiftyThousandMap(letters);
-        break;
-    case M1_100_000:
-        point = GetOneHundredThousandMap(letters);
-        break;
-    case M1_200_000:
-        point = GetTwoHundredThousandMap(letters);
-        break;
-    case M1_500_000:
-        point = GetFiveHundredThousandMap(letters);
-        break;
-    case M1_1_000_000:
-        point = GetOneMillionMap(letters);
-        break;
-    default:
-        break;
-    }
+        const string delimiter = "-";
+        auto letters = split(nomenclature, delimiter);
+        Point point;
+        switch (scale)
+        {
+        case M1_2000:
+            point = GetTwoThousandMap(letters);
+            break;
+        case M1_5000:
+            point = GetFiveThousandMap(letters);
+            break;
+        case M1_10_000:
+            point = GetTenThousandMap(letters);
+            break;
+        case M1_25_000:
+            point = GetTwentyFiveThousandMap(letters);
+            break;
+        case M1_50_000:
+            point = GetFiftyThousandMap(letters);
+            break;
+        case M1_100_000:
+            point = GetOneHundredThousandMap(letters);
+            break;
+        case M1_200_000:
+            point = GetTwoHundredThousandMap(letters);
+            break;
+        case M1_500_000:
+            point = GetFiveHundredThousandMap(letters);
+            break;
+        case M1_1_000_000:
+            point = GetOneMillionMap(letters);
+            break;
+        default:
+            break;
+        }
 
-    return WidgetMap::GetNomenclature(point, scale);
+        return WidgetMap::GetNomenclature(point, scale);
+    }
+    catch (const std::out_of_range& e)
+    {
+        auto res = WidgetMap();
+        res.Name = "?";
+        return res;
+    }
+    catch (wchar_t const*)
+    {
+        auto res = WidgetMap();
+        res.Name = "?";
+        return res;
+    }
 }

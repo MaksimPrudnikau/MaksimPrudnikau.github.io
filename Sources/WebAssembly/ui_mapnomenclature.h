@@ -213,7 +213,7 @@ public:
 
     void retranslateUi(QDialog *mapnomenclature)
     {
-        mapnomenclature->setWindowTitle(QCoreApplication::translate("mapnomenclature", "Dialog", nullptr));
+        mapnomenclature->setWindowTitle(QCoreApplication::translate("mapnomenclature", "Geomaks", nullptr));
         rightDownLat->setText(QString());
         leftUpLong->setText(QString());
         CalculateButton->setText(QCoreApplication::translate("mapnomenclature", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214", nullptr));
