@@ -199,3 +199,24 @@ Sources/Source C++ code/cmake-build-geomaks/Maps.exe
 Sources/Source C++ code/cmake-build-geomaks/Testing/Temporary/LastTest.log
 Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/toolchains-v1-479f1389823724b73269.json
 Sources/Source C++ code/out/build/x64-Debug/.cmake/api/v1/reply/index-2022-01-29T11-18-20-0196.json
+*.json
+*.json
+*.cmake
+*.bin
+*.bin
+*.exe
+*.obj
+*.c
+*.rsp
+*.make
+*.ipch
+*.marks
+*.txt
+*.cbp
+*.xml
+.idea/.name
+*.iml
+Sources/Source C++ code/out/build/x64-Debug/CMakeFiles/3.22.22022201-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/Makefile2
+Sources/Source C++ code/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Sources/Source C++ code/cmake-build-debug/Makefile

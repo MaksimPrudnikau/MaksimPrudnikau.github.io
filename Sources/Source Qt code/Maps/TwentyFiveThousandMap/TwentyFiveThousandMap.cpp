@@ -3,7 +3,7 @@
 //
 
 #include "TwentyFiveThousandMap.h"
-#include "QString"
+
 std::string TwentyFiveThousandMap::GetNomenclature(Point point, Border borders)
 {
     double dx = floor((borders.leftDown.Latitude - previous.borders.leftUp.Latitude).ToGrad() / lengthByLatitude.ToGrad());
@@ -41,34 +41,31 @@ Point TwentyFiveThousandMap::GetShift(std::string letter)
     Point point;
 
     int latitude = 0, longitude = 0;
-    const auto A = QString::fromUtf8("а");
-    const auto B = QString::fromUtf8("б");
-    const auto V = QString::fromUtf8("в");
-    const auto G = QString::fromUtf8("г");
+    const char A = (char)-32;
+    const char B = (char)-61;
+    const char V = (char)-30;
+    const char G = (char)-29;
 
-    auto russianLetter = QString::fromStdString(letter);
-
-    if (russianLetter == A)
+    if (letter[0] == A)
     {
         latitude = 1;
         longitude = 0;
     }
-    else if (russianLetter == B)
+    else if (letter[0] == B)
     {
         latitude = 1;
         longitude = 1;
     }
-    else if (russianLetter == V)
+    else if (letter[0] == V)
     {
         latitude = 0;
         longitude = 0;
     }
-    else if (russianLetter == G)
+    else if (letter[0] == G)
     {
         latitude = 0;
         longitude = 1;
     }
-
 
     for (size_t i = 0; i < latitude; ++i)
     {

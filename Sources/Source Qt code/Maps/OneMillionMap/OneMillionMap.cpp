@@ -19,9 +19,6 @@ Point OneMillionMap::GetShift(std::vector<std::string> letters)
     Point point;
     auto rows = Alphabet.find(letters[0]);
     auto column = stoi(letters[1]) - 30 - 1;
-    if (column < 0)
-        throw L"Не поддерживаемый формат номенклатуры";
-
     for (size_t i = 0; i < rows; ++i)
     {
         point.Latitude += lengthByLatitude;

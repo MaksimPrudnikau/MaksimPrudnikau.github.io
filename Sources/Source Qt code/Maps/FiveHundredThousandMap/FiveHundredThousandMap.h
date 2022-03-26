@@ -8,8 +8,14 @@
 
 struct FiveHundredThousandMap : public Map
 {
+    FiveHundredThousandMap() = default;
+    explicit FiveHundredThousandMap (WidgetMap previous) {
+        FiveHundredThousandMap::previous = std::move(previous);
+    }
+
     Point GetShift(std::string);
-private:
+protected:
+    WidgetMap previous;
     const Angle lengthByLatitude = {2, 0, 0};
     const Angle lengthByLongitude = {3, 0, 0};
     Angle getLengthByLatitude() override {return lengthByLatitude;}

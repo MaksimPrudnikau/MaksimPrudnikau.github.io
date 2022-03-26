@@ -6,6 +6,7 @@
 #include <locale>
 #include <codecvt>
 #include <string>
+#include <QString>
 using namespace std;
 
 // Formed by dividing the millionth sheet into four parts,
@@ -46,27 +47,28 @@ Point FiveHundredThousandMap::GetShift(std::string letters)
 {
     Point point;
     int latitude, longitude;
-    const char A = (char)-64;
-    const char B = (char)-63;
-    const char V = (char)-62;
-    const char G = (char)-61;
+    const QString A = QStringLiteral("А");
+    const QString B = QStringLiteral("Б");
+    const QString V = QStringLiteral("В");
+    const QString G = QStringLiteral("Г");
+    auto input = QString::fromStdString(letters);
 
-    if (letters[0] == A)
+    if (QString::compare(input, A, Qt::CaseInsensitive) == 0)
     {
         latitude = 1;
         longitude = 0;
     }
-    else if (letters[0] == B)
+    else if (QString::compare(input, B, Qt::CaseInsensitive) == 0)
     {
         latitude = 1;
         longitude = 1;
     }
-    else if (letters[0] == V)
+    else if (QString::compare(input, V, Qt::CaseInsensitive) == 0)
     {
         latitude = 0;
         longitude = 0;
     }
-    else if (letters[0] == G)
+    else if (QString::compare(input, G, Qt::CaseInsensitive) == 0)
     {
         latitude = 0;
         longitude = 1;
