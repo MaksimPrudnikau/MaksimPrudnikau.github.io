@@ -22,8 +22,7 @@ void MapBorders::on_BackToStartMenu_clicked()
 
 void MapBorders::on_CalculateButton_clicked()
 {
-    auto scale = Scales(ui->ScalesBox->currentIndex());
-    auto map = WidgetMap::GetBorders(ui->nomenclature->text().toStdString(), scale);
+    auto map = WidgetMap::GetBorders(ui->nomenclature->text().toStdString());
     showMap(map);
 }
 

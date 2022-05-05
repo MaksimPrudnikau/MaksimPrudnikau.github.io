@@ -8,6 +8,8 @@
 #include "Border.h"
 #include <string>
 #include <vector>
+#include <regex>
+using namespace std;
 enum Scales
 {
     M1_2000 = 8,
@@ -25,7 +27,7 @@ struct WidgetMap
 {
     std::string Name;
     Border borders;
-    
+
     WidgetMap() = default;
 
     WidgetMap(const std::vector<WidgetMap>& maps)
@@ -38,7 +40,10 @@ struct WidgetMap
     }
     
     static WidgetMap GetNomenclature(Point point, Scales scale);
-    static WidgetMap GetBorders(const std::string& nomenclature, Scales scale);
+    static WidgetMap GetBorders(const std::string& nomenclature);
+
+private:
+    static Scales GetScale(const std::string& nomenclature);
 };
 
 #endif //MAPS_WIDGETMAP_H

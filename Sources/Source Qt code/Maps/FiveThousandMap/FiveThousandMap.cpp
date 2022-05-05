@@ -11,6 +11,7 @@ std::string FiveThousandMap::GetNomenclature(Point point, Border borders)
     int length = rowLength * (dx - 1) + dy;
     return "(" + std::to_string(length) + ")";
 }
+
 Point FiveThousandMap::GetShift(std::string number)
 {
     Point point;
