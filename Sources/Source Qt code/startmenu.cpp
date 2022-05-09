@@ -11,7 +11,7 @@ StartMenu::StartMenu(QWidget *parent) :
     mapnomenclature = new class mapnomenclature();
     connect(mapnomenclature, &mapnomenclature::BackToTheStartMenu, this, &StartMenu::show);
 
-    mapBorders = new MapBorders();
+    mapBorders = new class MapBorders();
     connect(mapBorders, &MapBorders::BackToTheStartMenu, this, &StartMenu::show);
 }
 
@@ -28,7 +28,7 @@ void StartMenu::on_MapNomenclature_clicked()
 
 void StartMenu::on_MapBorders_clicked()
 {
+    mapBorders->update();
     mapBorders->show();
     this->close();
 }
-

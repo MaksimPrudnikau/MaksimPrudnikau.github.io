@@ -81,6 +81,31 @@ void mapnomenclature::showMap(const WidgetMap& map)
 
 void mapnomenclature::on_BackToStartMenu_clicked()
 {
-    this->close();
-    emit BackToTheStartMenu();
+  ui->Lat_deg->setValue(0),
+  ui->Lat_min->setValue(0);
+
+  ui->Long_deg->setValue(0),
+  ui->Long_min->setValue(0);
+
+  ui->Lat_sec->setValue(0),
+  ui->Long_sec->setValue(0);
+
+  ui->ScalesBox->setCurrentIndex(0);
+
+  ui->leftUpLat->clear();
+  ui->leftUpLong->clear();
+
+  ui->leftDownLat->clear();
+  ui->leftDownLong->clear();
+
+  ui->rightUpLat->clear();
+  ui->rightUpLong->clear();
+
+  ui->rightDownLat->clear();
+  ui->rightDownLong->clear();
+
+  ui->answer->clear();
+
+  this->close();
+  emit BackToTheStartMenu();
 }
