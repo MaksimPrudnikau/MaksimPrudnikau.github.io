@@ -24,7 +24,7 @@ protected:
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
 
-    std::string GetNomenclature(Point point, Border borders) override;
+    std::string GetNomenclature(Point point, Border borders) override;   
 };
 
 

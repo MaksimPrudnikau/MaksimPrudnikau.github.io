@@ -13,11 +13,12 @@ const std::string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 struct Map
 {
-    WidgetMap GetWidgetMap(Point point)
+    WidgetMap GetWidgetMap(Point point, std::string scale)
     {
         WidgetMap map;
         map.borders = GetBorder(point);
         map.Name = GetNomenclature(point, map.borders);
+        map.Scale = scale;
         return map;
     }
 

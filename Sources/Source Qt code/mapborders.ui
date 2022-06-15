@@ -45,19 +45,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="answer">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>200</y>
-     <width>141</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="Line" name="rightBorder">
    <property name="geometry">
     <rect>
@@ -261,58 +248,35 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="ScalesBox">
-      <item>
-       <property name="text">
-        <string>1:1 000 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:500 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:200 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:100 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:50 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:25 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:10 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:5 000</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1:2 000</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="CalculateButton">
       <property name="text">
        <string>Рассчитать</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>190</y>
+     <width>131</width>
+     <height>49</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="answer">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="topo_scale">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>

@@ -16,7 +16,6 @@ MapBorders::~MapBorders()
 void MapBorders::on_BackToStartMenu_clicked()
 {
   ui->nomenclature->clear();
-  ui->ScalesBox->setCurrentIndex(0);
 
   ui->leftUpLat->clear();
   ui->leftUpLong->clear();
@@ -84,4 +83,5 @@ void MapBorders::showMap(const WidgetMap& map)
     ui->rightDownLong->setText(QString::fromStdString(rightDownLong));
 
     ui->answer->setText(QString::fromStdString(map.Name));
+    ui->topo_scale->setText(QString::fromStdString(map.Scale));
 }

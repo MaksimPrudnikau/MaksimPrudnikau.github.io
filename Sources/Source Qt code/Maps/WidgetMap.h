@@ -27,21 +27,24 @@ struct WidgetMap
 {
     std::string Name;
     Border borders;
+    std::string Scale;
 
     WidgetMap() = default;
 
     WidgetMap(const std::vector<WidgetMap>& maps)
     {
+        string scale;
         for (const auto& map : maps)
         {
             Name += map.Name;
             borders = map.borders;
+            scale = map.Scale;
         }
+        Scale = scale;
     }
     
     static WidgetMap GetNomenclature(Point point, Scales scale);
     static WidgetMap GetBorders(const std::string& nomenclature);
-
 private:
     static Scales GetScale(const std::string& nomenclature);
 };

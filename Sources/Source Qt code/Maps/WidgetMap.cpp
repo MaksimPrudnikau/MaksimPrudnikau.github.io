@@ -24,55 +24,55 @@ using namespace std;
 
 WidgetMap WidgetMap::GetNomenclature(const Point point, const Scales scale)
 {
-    WidgetMap oneMillionMapWidget = OneMillionMap().GetWidgetMap(point);
+    WidgetMap oneMillionMapWidget = OneMillionMap().GetWidgetMap(point, (string)"1:1 000 000");
     if (scale == M1_1_000_000)
     {
         return oneMillionMapWidget;
     }
     
-    WidgetMap fiveHundredThousandMapWidget = FiveHundredThousandMap().GetWidgetMap(point);
+    WidgetMap fiveHundredThousandMapWidget = FiveHundredThousandMap().GetWidgetMap(point, (string)"1:500 000");
     if (scale == M1_500_000)
     {
         return {{oneMillionMapWidget, fiveHundredThousandMapWidget}};
     }
     
-    WidgetMap twoHundredThousandMap = TwoHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
+    WidgetMap twoHundredThousandMap = TwoHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point, (string)"1:200 000");
     if (scale == M1_200_000)
     {
         return {{oneMillionMapWidget, twoHundredThousandMap}};
     }
 
-    WidgetMap oneHundredThousandMap = OneHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point);
+    WidgetMap oneHundredThousandMap = OneHundredThousandMap(oneMillionMapWidget).GetWidgetMap(point, (string)"1:100 000");
     if (scale == M1_100_000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap} };
     }
 
-    WidgetMap fiftyThousandMap = FiftyThousandMap(oneHundredThousandMap).GetWidgetMap(point);
+    WidgetMap fiftyThousandMap = FiftyThousandMap(oneHundredThousandMap).GetWidgetMap(point, (string)"1:50 000");
     if (scale == M1_50_000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap} };
     }
 
-    WidgetMap twentyFiveThousandMap = TwentyFiveThousandMap(fiftyThousandMap).GetWidgetMap(point);
+    WidgetMap twentyFiveThousandMap = TwentyFiveThousandMap(fiftyThousandMap).GetWidgetMap(point, (string)"1:25 000");
     if (scale == M1_25_000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap} };
     }
 
-    WidgetMap tenThousandMap = TenThousandMap(twentyFiveThousandMap).GetWidgetMap(point);
+    WidgetMap tenThousandMap = TenThousandMap(twentyFiveThousandMap).GetWidgetMap(point, (string)"1:10 000");
     if (scale == M1_10_000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiftyThousandMap, twentyFiveThousandMap, tenThousandMap} };
     }
 
-    WidgetMap fiveThousandMap = FiveThousandMap(oneHundredThousandMap).GetWidgetMap(point);
+    WidgetMap fiveThousandMap = FiveThousandMap(oneHundredThousandMap).GetWidgetMap(point, (string)"1:5 000");
     if (scale == M1_5000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap} };
     }
 
-    WidgetMap twoThousandMap = TwoThousandMap(fiveThousandMap).GetWidgetMap(point);
+    WidgetMap twoThousandMap = TwoThousandMap(fiveThousandMap).GetWidgetMap(point, (string)"1:2 000");
     if (scale == M1_2000)
     {
         return { {oneMillionMapWidget, oneHundredThousandMap, fiveThousandMap, twoThousandMap} };
