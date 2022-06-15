@@ -93,7 +93,7 @@
        <widget class="QPushButton" name="MapNomenclature">
         <property name="font">
          <font>
-          <pointsize>7</pointsize>
+          <pointsize>8</pointsize>
          </font>
         </property>
         <property name="text">
@@ -118,7 +118,7 @@
        <widget class="QPushButton" name="MapBorders">
         <property name="font">
          <font>
-          <pointsize>7</pointsize>
+          <pointsize>8</pointsize>
          </font>
         </property>
         <property name="text">
