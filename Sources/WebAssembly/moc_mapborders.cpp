@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "mapborders.h"
+#include "../Source_Qt_code/mapborders.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

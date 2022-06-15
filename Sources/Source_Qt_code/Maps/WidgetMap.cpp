@@ -157,7 +157,7 @@ const Point GetTenThousandMap(vector<string>& letters)
 
 vector<string> extractIntegerWords(string str)
 {
-    vector<string> numbers;
+  vector<string> numbers;
     stringstream ss;
 
     /* Storing the whole string into string stream */
