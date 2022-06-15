@@ -91,6 +91,11 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="MapNomenclature">
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Поиск номенклатуры по координатам</string>
         </property>
@@ -111,6 +116,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="MapBorders">
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Поиск границ рамки по номенклатуре</string>
         </property>

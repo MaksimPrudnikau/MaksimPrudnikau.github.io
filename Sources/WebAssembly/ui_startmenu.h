@@ -75,6 +75,9 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         MapNomenclature = new QPushButton(gridLayoutWidget);
         MapNomenclature->setObjectName(QString::fromUtf8("MapNomenclature"));
+        QFont font1;
+        font1.setPointSize(7);
+        MapNomenclature->setFont(font1);
 
         verticalLayout->addWidget(MapNomenclature);
 
@@ -84,6 +87,7 @@ public:
 
         MapBorders = new QPushButton(gridLayoutWidget);
         MapBorders->setObjectName(QString::fromUtf8("MapBorders"));
+        MapBorders->setFont(font1);
 
         verticalLayout->addWidget(MapBorders);
 
