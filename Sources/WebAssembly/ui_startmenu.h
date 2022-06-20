@@ -33,8 +33,6 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *MapNomenclature;
     QSpacerItem *verticalSpacer_4;
-    QPushButton *MapBorders;
-    QSpacerItem *verticalSpacer_3;
 
     void setupUi(QDialog *StartMenu)
     {
@@ -85,16 +83,6 @@ public:
 
         verticalLayout->addItem(verticalSpacer_4);
 
-        MapBorders = new QPushButton(gridLayoutWidget);
-        MapBorders->setObjectName(QString::fromUtf8("MapBorders"));
-        MapBorders->setFont(font1);
-
-        verticalLayout->addWidget(MapBorders);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_3);
-
 
         verticalLayout_4->addLayout(verticalLayout);
 
@@ -109,7 +97,6 @@ public:
         StartMenu->setWindowTitle(QCoreApplication::translate("StartMenu", "GeoMaks", nullptr));
         label->setText(QCoreApplication::translate("StartMenu", "GeoMaks", nullptr));
         MapNomenclature->setText(QCoreApplication::translate("StartMenu", "\320\237\320\276\320\270\321\201\320\272 \320\275\320\276\320\274\320\265\320\275\320\272\320\273\320\260\321\202\321\203\321\200\321\213 \320\277\320\276 \320\272\320\276\320\276\321\200\320\264\320\270\320\275\320\260\321\202\320\260\320\274", nullptr));
-        MapBorders->setText(QCoreApplication::translate("StartMenu", "\320\237\320\276\320\270\321\201\320\272 \320\263\321\200\320\260\320\275\320\270\321\206 \321\200\320\260\320\274\320\272\320\270 \320\277\320\276 \320\275\320\276\320\274\320\265\320\275\320\272\320\273\320\260\321\202\321\203\321\200\320\265", nullptr));
     } // retranslateUi
 
 };
