@@ -30,6 +30,7 @@ void MapBorders::on_BackToStartMenu_clicked()
   ui->rightDownLong->clear();
 
   ui->answer->clear();
+  ui->topo_scale->clear();
 
   this->close();
   emit BackToTheStartMenu();

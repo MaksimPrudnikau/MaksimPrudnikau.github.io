@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>453</width>
+    <height>322</height>
    </rect>
   </property>
   <property name="font">
@@ -241,10 +241,23 @@
      <x>70</x>
      <y>20</y>
      <width>181</width>
-     <height>101</height>
+     <height>107</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
     <item>
      <widget class="QLineEdit" name="nomenclature">
       <property name="placeholderText">
@@ -253,11 +266,37 @@
      </widget>
     </item>
     <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
      <widget class="QPushButton" name="CalculateButton">
       <property name="text">
        <string>Рассчитать</string>
       </property>
      </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
@@ -267,7 +306,7 @@
      <x>130</x>
      <y>190</y>
      <width>131</width>
-     <height>49</height>
+     <height>56</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">

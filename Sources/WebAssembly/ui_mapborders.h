@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -40,8 +41,11 @@ public:
     QLabel *rightDownLong;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer_2;
     QLineEdit *nomenclature;
+    QSpacerItem *verticalSpacer;
     QPushButton *CalculateButton;
+    QSpacerItem *verticalSpacer_3;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout;
     QLabel *answer;
@@ -51,7 +55,7 @@ public:
     {
         if (MapBorders->objectName().isEmpty())
             MapBorders->setObjectName(QString::fromUtf8("MapBorders"));
-        MapBorders->resize(400, 300);
+        MapBorders->resize(453, 322);
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
         MapBorders->setFont(font);
@@ -123,23 +127,35 @@ public:
         rightDownLong->setSizePolicy(sizePolicy);
         layoutWidget = new QWidget(MapBorders);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(70, 20, 181, 101));
+        layoutWidget->setGeometry(QRect(70, 20, 181, 107));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
+
         nomenclature = new QLineEdit(layoutWidget);
         nomenclature->setObjectName(QString::fromUtf8("nomenclature"));
 
         verticalLayout->addWidget(nomenclature);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
 
         CalculateButton = new QPushButton(layoutWidget);
         CalculateButton->setObjectName(QString::fromUtf8("CalculateButton"));
 
         verticalLayout->addWidget(CalculateButton);
 
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_3);
+
         layoutWidget1 = new QWidget(MapBorders);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(130, 190, 131, 49));
+        layoutWidget1->setGeometry(QRect(130, 190, 131, 56));
         gridLayout = new QGridLayout(layoutWidget1);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
