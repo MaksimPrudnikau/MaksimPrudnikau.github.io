@@ -17,17 +17,17 @@ std::string OneMillionMap::GetNomenclature(Point point, Border borders)
 Point OneMillionMap::GetShift(std::vector<std::string> letters)
 {
     Point point;
-    auto rows = Alphabet.find(letters[0]);
-    auto column = stoi(letters[1]) - 30 - 1;
-    for (size_t i = 0; i < rows; ++i)
-    {
-        point.Latitude += lengthByLatitude;
-    }
 
-    for (size_t i = 0; i < column; ++i)
-    {
+    for (int i = 0; string(1, Alphabet[i]).compare(letters.at(0)) != 0; ++i)
+      {
+        point.Latitude += lengthByLatitude;
+      }
+
+    auto cols = stoi(letters.at(1)) - 31;
+    for (int i = 0; i < cols; ++i)
+      {
         point.Longitude += lengthByLongitude;
-    }
+      }
 
     return point;
 }

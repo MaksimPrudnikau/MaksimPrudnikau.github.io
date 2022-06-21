@@ -18,6 +18,7 @@ protected:
     WidgetMap previous;
     const Angle lengthByLatitude = {2, 0, 0};
     const Angle lengthByLongitude = {3, 0, 0};
+    const unsigned int rowLength = 4;
     Angle getLengthByLatitude() override {return lengthByLatitude;}
     Angle getLengthByLongitude() override {return lengthByLongitude;};
     

@@ -50,33 +50,28 @@ Point TwoThousandMap::GetShift(std::string word)
 {
     Point point;
     const std::string letters = "абвгдежзи";
-    int number = letters.find(word) + 1;
-    int row = floor(number / rowLength);
-    int col = 1;
-
-    if (row % rowLength == 0)
-    {
-        col = rowLength;
-    }
-    else
-    {
-        while (row * rowLength + col != number)
-        {
-            col++;
-        }
-    }
-
-    row = rowLength - row - 1;
-
-    for (int i = 0; i < row; i++)
-    {
+    int value = letters.find(word) + 1;
+    int counter = 1;
+    for (int i = 0; i < rowLength - 1; ++i)
+      {
         point.Latitude += lengthByLatitude;
+      }
+
+    Angle diffFromLeft;
+    for (int i = 0; i < rowLength; i++)
+    {
+        diffFromLeft = Angle(0, 0, 0);
+        for (int j = 0; j < rowLength; j++, ++counter)
+        {
+            if (counter == value) break;
+            diffFromLeft += lengthByLongitude;
+        }
+
+        if (counter == value) break;
+        point.Latitude = point.Latitude - lengthByLatitude;
     }
 
-    for (int i = 0; i < col - 1; i++)
-    {
-        point.Longitude += lengthByLongitude;
-    }
+    point.Longitude += diffFromLeft;
 
     return point;
 }

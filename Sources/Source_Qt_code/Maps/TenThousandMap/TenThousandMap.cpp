@@ -18,36 +18,21 @@ Point TenThousandMap::GetShift(std::string letter)
 {
     Point point;
 
-    int latitude = 0, longitude = 0;
     int number = std::stoi(letter);
 
     if (number == 1)
     {
-        latitude = 1;
-        longitude = 0;
+         point.Latitude += lengthByLatitude;
     }
     else if (number == 2)
     {
-        latitude = 1;
-        longitude = 1;
+        point.Latitude += lengthByLatitude;
+        point.Longitude += lengthByLongitude;
     }
     else if (number == 3)
     {
-        latitude = 0;
-        longitude = 0;
     }
     else if (number == 4)
-    {
-        latitude = 0;
-        longitude = 1;
-    }
-
-    for (size_t i = 0; i < latitude; ++i)
-    {
-        point.Latitude += lengthByLatitude;
-    }
-
-    for (size_t i = 0; i < longitude; ++i)
     {
         point.Longitude += lengthByLongitude;
     }

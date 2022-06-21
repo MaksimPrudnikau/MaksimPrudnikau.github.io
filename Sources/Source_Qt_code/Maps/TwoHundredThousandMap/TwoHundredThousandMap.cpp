@@ -97,31 +97,26 @@ Point TwoHundredThousandMap::GetShift(std::string numbers)
 {
     Point point;
     int number = roman_to_integer(numbers);
-    int row = floor(number / rowLength);
-    int col = 1;
-    if (row % rowLength == 0)
-    {
-        col = rowLength;
-    }
-    else
-    {
-        while (row * rowLength + col != number)
-        {
-            col++;
-        }
-    }
-
-    row = rowLength - row - 1;
-
-    for (int i = 0; i < row; i++)
-    {
+    int counter = 1;
+    for (int i = 0; i < rowLength - 1; ++i)
+      {
         point.Latitude += lengthByLatitude;
-    }
+      }
 
-    for (int i = 0; i < col - 1; i++)
+    Angle diffFromLeft;
+    for (int i = 0; i < rowLength; i++)
     {
-        point.Longitude += lengthByLongitude;
+        diffFromLeft = Angle(0, 0, 0);
+        for (int j = 0; j < rowLength; j++, ++counter)
+        {
+            if (counter == number) break;
+            diffFromLeft += lengthByLongitude;
+        }
+
+        if (counter == number) break;
+        point.Latitude = point.Latitude - lengthByLatitude;
     }
 
+    point.Longitude += diffFromLeft;
     return point;
 }

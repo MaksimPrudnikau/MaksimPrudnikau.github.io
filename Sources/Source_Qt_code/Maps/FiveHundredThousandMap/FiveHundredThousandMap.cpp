@@ -74,9 +74,14 @@ Point FiveHundredThousandMap::GetShift(std::string letters)
         longitude = 1;
     }
 
+    for (int i = 0; i < rowLength - 1; ++i)
+      {
+        point.Latitude += lengthByLatitude;
+      }
+
     for (size_t i = 0; i < latitude; ++i)
     {
-        point.Latitude += lengthByLatitude;
+        point.Latitude = point.Latitude - lengthByLatitude;
     }
 
     for (size_t i = 0; i < longitude; ++i)

@@ -122,7 +122,8 @@ const Point GetFiveHundredThousandMap(vector<string>& letters)
 const Point GetTwoHundredThousandMap(vector<string>& letters)
 {
     Point point = GetOneMillionMap(letters);
-    point += TwoHundredThousandMap().GetShift(letters.at(2));
+    auto shift = TwoHundredThousandMap().GetShift(letters.at(2));
+    point += shift;
     return point;
 }
 
@@ -184,7 +185,6 @@ vector<string> extractIntegerWords(string str)
 
 const Point GetFiveThousandMap(vector<string>& letters)
 {
-  auto numb = extractIntegerWords(letters.at(2));
   Point point = GetOneHundredThousandMap(letters);
   auto element = letters.at(3);
   element.erase(0, 1);
@@ -195,10 +195,13 @@ const Point GetFiveThousandMap(vector<string>& letters)
 
 const Point GetTwoThousandMap(vector<string>& letters)
 {
-   Point point = GetFiveThousandMap(letters);
-   auto element = letters.at(4);
-   element.erase(element.size() - 1, 1);
-   point += TwoThousandMap().GetShift(element);
+   vector<string> newVec;
+   newVec.assign(letters.begin(), letters.end() - 1);
+   newVec.at(3).push_back(')');
+   Point point = GetFiveThousandMap(newVec);
+   auto el4 = letters.at(4);
+   el4.pop_back();
+   point += TwoThousandMap().GetShift(el4);
    return point;
 }
 
@@ -211,8 +214,8 @@ Scales WidgetMap::GetScale(const std::string &nomenclature)
     auto fiftyThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}-[А-Я]$"), QRegularExpression::UseUnicodePropertiesOption); // 50_000
     auto twentyFiveThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}-[А-Я]-[а-я]$"), QRegularExpression::UseUnicodePropertiesOption); // 25_000
     auto tenThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}-[А-Я]-[а-я]-[1-5]$"), QRegularExpression::UseUnicodePropertiesOption); // 10_000
-    auto fiveThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}\\(\\d{1,3}\\)$"), QRegularExpression::UseUnicodePropertiesOption); // 5_000
-    auto twoThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}\\(\\d{1,3}-[а-я]\\)$"), QRegularExpression::UseUnicodePropertiesOption); // 2_000
+    auto fiveThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}-\\(\\d{1,3}\\)$"), QRegularExpression::UseUnicodePropertiesOption); // 5_000
+    auto twoThousandRegex = QRegularExpression(QString("[A-Z]-\\d{1,2}-\\d{1,2}-\\(\\d{1,3}-[а-я]\\)$"), QRegularExpression::UseUnicodePropertiesOption); // 2_000
     const auto input = nomenclature.c_str();
 
     if (oneMillionMapRegex.match(input).hasMatch())
