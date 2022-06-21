@@ -10,6 +10,11 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Geomaks</string>
   </property>
@@ -27,6 +32,11 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -46,6 +56,11 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -188,6 +203,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -207,6 +227,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -220,6 +245,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -232,6 +262,11 @@
      <width>21</width>
      <height>111</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
@@ -252,6 +287,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -264,6 +304,11 @@
      <width>83</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="text">
     <string>Назад</string>
@@ -284,6 +329,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -297,6 +347,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -309,6 +364,11 @@
      <width>141</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -329,6 +389,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -348,6 +413,11 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -360,6 +430,11 @@
      <width>21</width>
      <height>111</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>

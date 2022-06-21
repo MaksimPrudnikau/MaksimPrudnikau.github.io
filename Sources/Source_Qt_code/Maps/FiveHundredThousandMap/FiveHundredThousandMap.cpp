@@ -55,36 +55,17 @@ Point FiveHundredThousandMap::GetShift(std::string letters)
 
     if (QString::compare(input, A, Qt::CaseInsensitive) == 0)
     {
-        latitude = 1;
-        longitude = 0;
+        point.Latitude += lengthByLatitude;
     }
     else if (QString::compare(input, B, Qt::CaseInsensitive) == 0)
     {
-        latitude = 1;
-        longitude = 1;
+        point.Latitude += lengthByLatitude;
+        point.Longitude += lengthByLongitude;
     }
     else if (QString::compare(input, V, Qt::CaseInsensitive) == 0)
     {
-        latitude = 0;
-        longitude = 0;
     }
     else if (QString::compare(input, G, Qt::CaseInsensitive) == 0)
-    {
-        latitude = 0;
-        longitude = 1;
-    }
-
-    for (int i = 0; i < rowLength - 1; ++i)
-      {
-        point.Latitude += lengthByLatitude;
-      }
-
-    for (size_t i = 0; i < latitude; ++i)
-    {
-        point.Latitude = point.Latitude - lengthByLatitude;
-    }
-
-    for (size_t i = 0; i < longitude; ++i)
     {
         point.Longitude += lengthByLongitude;
     }
