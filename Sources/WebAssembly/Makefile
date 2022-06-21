@@ -63,8 +63,10 @@ SOURCES       = ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.cpp \
 		..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.cpp \
 		..\Source_Qt_code\Maps\WidgetMap.cpp \
 		..\Source_Qt_code\main.cpp \
+		..\Source_Qt_code\mapborders.cpp \
 		..\Source_Qt_code\mapnomenclature.cpp \
 		..\Source_Qt_code\startmenu.cpp C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/WebAssembly/maps.js_plugin_import.cpp \
+		moc_mapborders.cpp \
 		moc_mapnomenclature.cpp \
 		moc_startmenu.cpp
 OBJECTS       = FiftyThousandMap.obj \
@@ -78,9 +80,11 @@ OBJECTS       = FiftyThousandMap.obj \
 		TwoThousandMap.obj \
 		WidgetMap.obj \
 		main.obj \
+		mapborders.obj \
 		mapnomenclature.obj \
 		startmenu.obj \
 		maps.js_plugin_import.obj \
+		moc_mapborders.obj \
 		moc_mapnomenclature.obj \
 		moc_startmenu.obj
 DIST          =  ..\Source_Qt_code\Maps\Angle.h \
@@ -97,6 +101,7 @@ DIST          =  ..\Source_Qt_code\Maps\Angle.h \
 		..\Source_Qt_code\Maps\TwoHundredThousandMap\TwoHundredThousandMap.h \
 		..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.h \
 		..\Source_Qt_code\Maps\WidgetMap.h \
+		..\Source_Qt_code\mapborders.h \
 		..\Source_Qt_code\mapnomenclature.h \
 		..\Source_Qt_code\startmenu.h ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.cpp \
 		..\Source_Qt_code\Maps\FiveHundredThousandMap\FiveHundredThousandMap.cpp \
@@ -109,6 +114,7 @@ DIST          =  ..\Source_Qt_code\Maps\Angle.h \
 		..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.cpp \
 		..\Source_Qt_code\Maps\WidgetMap.cpp \
 		..\Source_Qt_code\main.cpp \
+		..\Source_Qt_code\mapborders.cpp \
 		..\Source_Qt_code\mapnomenclature.cpp \
 		..\Source_Qt_code\startmenu.cpp
 QMAKE_TARGET  = Maps.js
@@ -119,7 +125,7 @@ TARGET        = .\Maps.js
 first: all
 ####### Build rules
 
-.\Maps.js: C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Widgets.a C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Gui.a C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Core.a ui_mapnomenclature.h ui_startmenu.h $(OBJECTS)  apphtml appjs appsvg
+.\Maps.js: C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Widgets.a C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Gui.a C:\MyWorld\Programms\Qt\5.15.2\wasm_32\lib\libQt5Core.a ui_mapborders.h ui_mapnomenclature.h ui_startmenu.h $(OBJECTS)  apphtml appjs appsvg
 	@if not exist .\ mkdir .\ & if not exist .\ exit 1
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -463,9 +469,9 @@ distdir: FORCE
 	@if not exist $(DISTDIR) mkdir $(DISTDIR) & if not exist $(DISTDIR) exit 1
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)\
 	$(COPY_FILE) --parents ..\..\..\..\Programms\Qt\5.15.2\wasm_32\mkspecs\features\data\dummy.cpp $(DISTDIR)\
-	$(COPY_FILE) --parents ..\Source_Qt_code\Maps\Angle.h ..\Source_Qt_code\Maps\Border.h ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.h ..\Source_Qt_code\Maps\FiveHundredThousandMap\FiveHundredThousandMap.h ..\Source_Qt_code\Maps\FiveThousandMap\FiveThousandMap.h ..\Source_Qt_code\Maps\Map.h ..\Source_Qt_code\Maps\OneHundredThousandMap\OneHundredThousandMap.h ..\Source_Qt_code\Maps\OneMillionMap\OneMillionMap.h ..\Source_Qt_code\Maps\Point.h ..\Source_Qt_code\Maps\TenThousandMap\TenThousandMap.h ..\Source_Qt_code\Maps\TwentyFiveThousandMap\TwentyFiveThousandMap.h ..\Source_Qt_code\Maps\TwoHundredThousandMap\TwoHundredThousandMap.h ..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.h ..\Source_Qt_code\Maps\WidgetMap.h ..\Source_Qt_code\mapnomenclature.h ..\Source_Qt_code\startmenu.h $(DISTDIR)\
-	$(COPY_FILE) --parents ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.cpp ..\Source_Qt_code\Maps\FiveHundredThousandMap\FiveHundredThousandMap.cpp ..\Source_Qt_code\Maps\FiveThousandMap\FiveThousandMap.cpp ..\Source_Qt_code\Maps\OneHundredThousandMap\OneHundredThousandMap.cpp ..\Source_Qt_code\Maps\OneMillionMap\OneMillionMap.cpp ..\Source_Qt_code\Maps\TenThousandMap\TenThousandMap.cpp ..\Source_Qt_code\Maps\TwentyFiveThousandMap\TwentyFiveThousandMap.cpp ..\Source_Qt_code\Maps\TwoHundredThousandMap\TwoHundredThousandMap.cpp ..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.cpp ..\Source_Qt_code\Maps\WidgetMap.cpp ..\Source_Qt_code\main.cpp ..\Source_Qt_code\mapnomenclature.cpp ..\Source_Qt_code\startmenu.cpp $(DISTDIR)\
-	$(COPY_FILE) --parents ..\Source_Qt_code\mapnomenclature.ui ..\Source_Qt_code\startmenu.ui $(DISTDIR)\
+	$(COPY_FILE) --parents ..\Source_Qt_code\Maps\Angle.h ..\Source_Qt_code\Maps\Border.h ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.h ..\Source_Qt_code\Maps\FiveHundredThousandMap\FiveHundredThousandMap.h ..\Source_Qt_code\Maps\FiveThousandMap\FiveThousandMap.h ..\Source_Qt_code\Maps\Map.h ..\Source_Qt_code\Maps\OneHundredThousandMap\OneHundredThousandMap.h ..\Source_Qt_code\Maps\OneMillionMap\OneMillionMap.h ..\Source_Qt_code\Maps\Point.h ..\Source_Qt_code\Maps\TenThousandMap\TenThousandMap.h ..\Source_Qt_code\Maps\TwentyFiveThousandMap\TwentyFiveThousandMap.h ..\Source_Qt_code\Maps\TwoHundredThousandMap\TwoHundredThousandMap.h ..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.h ..\Source_Qt_code\Maps\WidgetMap.h ..\Source_Qt_code\mapborders.h ..\Source_Qt_code\mapnomenclature.h ..\Source_Qt_code\startmenu.h $(DISTDIR)\
+	$(COPY_FILE) --parents ..\Source_Qt_code\Maps\FiftyThousandMap\FiftyThousandMap.cpp ..\Source_Qt_code\Maps\FiveHundredThousandMap\FiveHundredThousandMap.cpp ..\Source_Qt_code\Maps\FiveThousandMap\FiveThousandMap.cpp ..\Source_Qt_code\Maps\OneHundredThousandMap\OneHundredThousandMap.cpp ..\Source_Qt_code\Maps\OneMillionMap\OneMillionMap.cpp ..\Source_Qt_code\Maps\TenThousandMap\TenThousandMap.cpp ..\Source_Qt_code\Maps\TwentyFiveThousandMap\TwentyFiveThousandMap.cpp ..\Source_Qt_code\Maps\TwoHundredThousandMap\TwoHundredThousandMap.cpp ..\Source_Qt_code\Maps\TwoThousandMap\TwoThousandMap.cpp ..\Source_Qt_code\Maps\WidgetMap.cpp ..\Source_Qt_code\main.cpp ..\Source_Qt_code\mapborders.cpp ..\Source_Qt_code\mapnomenclature.cpp ..\Source_Qt_code\startmenu.cpp $(DISTDIR)\
+	$(COPY_FILE) --parents ..\Source_Qt_code\mapborders.ui ..\Source_Qt_code\mapnomenclature.ui ..\Source_Qt_code\startmenu.ui $(DISTDIR)\
 
 
 clean: compiler_clean 
@@ -517,9 +523,128 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ..\..\..\..\Programms\Qt\5.15.2\wasm_32\mkspecs\features\data\dummy.cpp
 	em++ -O2 -std=gnu++2a -s ALLOW_MEMORY_GROWTH=1 -Wall -Wextra -dM -E -o moc_predefs.h ..\..\..\..\Programms\Qt\5.15.2\wasm_32\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: moc_mapnomenclature.cpp moc_startmenu.cpp
+compiler_moc_header_make_all: moc_mapborders.cpp moc_mapnomenclature.cpp moc_startmenu.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mapnomenclature.cpp moc_startmenu.cpp
+	-$(DEL_FILE) moc_mapborders.cpp moc_mapnomenclature.cpp moc_startmenu.cpp
+moc_mapborders.cpp: ..\Source_Qt_code\mapborders.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QDialog \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qdialog.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtguiglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qconfig.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtcore-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsysinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlogging.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qflags.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmutex.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qnumeric.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qversiontagging.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtgui-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qnamespace.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobject.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstring.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qchar.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbytearray.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qrefcount.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qarraydata.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringliteral.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringview.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringbuilder.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qalgorithms.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qiterator.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qpair.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvector.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontainertools_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qpoint.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringlist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qregexp.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcoreevent.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmetatype.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontainerfwd.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobject_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmargins.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpaintdevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qrect.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsize.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpalette.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qcolor.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qrgb.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qrgba64.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qbrush.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qmatrix.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpolygon.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qregion.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qdatastream.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qiodevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qline.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtransform.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qimage.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpixelformat.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpixmap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qshareddata.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qhash.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfont.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfontmetrics.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfontinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qsizepolicy.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qcursor.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qkeysequence.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qevent.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvariant.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qdebug.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtextstream.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlocale.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qset.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qurl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qurlquery.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qfile.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qfiledevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qvector2d.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtouchdevice.h \
+		..\Source_Qt_code\Maps\Map.h \
+		..\Source_Qt_code\Maps\WidgetMap.h \
+		..\Source_Qt_code\Maps\Point.h \
+		..\Source_Qt_code\Maps\Angle.h \
+		..\Source_Qt_code\Maps\Border.h \
+		..\Source_Qt_code\mainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QMainWindow \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qmainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qicon.h \
+		moc_predefs.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\bin\moc.exe
+	C:\MyWorld\Programms\Qt\5.15.2\wasm_32\bin\moc.exe $(DEFINES) --include C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/WebAssembly/moc_predefs.h -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/mkspecs/wasm-emscripten -IC:/MyWorld/git/MaksimPrudnikau.github.io/Sources/Source_Qt_code -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtWidgets -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtGui -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtCore -I. ..\Source_Qt_code\mapborders.h -o moc_mapborders.cpp
+
 moc_mapnomenclature.cpp: ..\Source_Qt_code\mapnomenclature.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QDialog \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qdialog.h \
@@ -745,6 +870,12 @@ moc_startmenu.cpp: ..\Source_Qt_code\startmenu.h \
 		..\Source_Qt_code\Maps\Point.h \
 		..\Source_Qt_code\Maps\Angle.h \
 		..\Source_Qt_code\Maps\Border.h \
+		..\Source_Qt_code\mapborders.h \
+		..\Source_Qt_code\mainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QMainWindow \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qmainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qicon.h \
 		moc_predefs.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\bin\moc.exe
 	C:\MyWorld\Programms\Qt\5.15.2\wasm_32\bin\moc.exe $(DEFINES) --include C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/WebAssembly/moc_predefs.h -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/mkspecs/wasm-emscripten -IC:/MyWorld/git/MaksimPrudnikau.github.io/Sources/Source_Qt_code -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtWidgets -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtGui -IC:/MyWorld/Programms/Qt/5.15.2/wasm_32/include/QtCore -I. ..\Source_Qt_code\startmenu.h -o moc_startmenu.cpp
@@ -753,9 +884,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mapnomenclature.h ui_startmenu.h
+compiler_uic_make_all: ui_mapborders.h ui_mapnomenclature.h ui_startmenu.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mapnomenclature.h ui_startmenu.h
+	-$(DEL_FILE) ui_mapborders.h ui_mapnomenclature.h ui_startmenu.h
+ui_mapborders.h: ..\Source_Qt_code\mapborders.ui \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\bin\uic.exe
+	C:\MyWorld\Programms\Qt\5.15.2\wasm_32\bin\uic.exe ..\Source_Qt_code\mapborders.ui -o ui_mapborders.h
+
 ui_mapnomenclature.h: ..\Source_Qt_code\mapnomenclature.ui \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\bin\uic.exe
 	C:\MyWorld\Programms\Qt\5.15.2\wasm_32\bin\uic.exe ..\Source_Qt_code\mapnomenclature.ui -o ui_mapnomenclature.h
@@ -1142,6 +1277,7 @@ main.obj: ..\Source_Qt_code\main.cpp ..\Source_Qt_code\mainwindow.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QDialog \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qdialog.h \
 		..\Source_Qt_code\mapnomenclature.h \
+		..\Source_Qt_code\mapborders.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QApplication \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qapplication.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcoreapplication.h \
@@ -1150,6 +1286,124 @@ main.obj: ..\Source_Qt_code\main.cpp ..\Source_Qt_code\mainwindow.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qguiapplication.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.obj ..\Source_Qt_code\main.cpp
+
+mapborders.obj: ..\Source_Qt_code\mapborders.cpp ..\Source_Qt_code\mapborders.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QDialog \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qdialog.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtguiglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qglobal.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qconfig.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtcore-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsysinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlogging.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qflags.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmutex.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qnumeric.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qversiontagging.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtgui-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qnamespace.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobject.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstring.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qchar.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbytearray.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qrefcount.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qarraydata.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringliteral.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringview.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringbuilder.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qalgorithms.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qiterator.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qpair.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvector.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontainertools_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qpoint.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringlist.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qregexp.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcoreevent.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmetatype.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontainerfwd.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qobject_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmargins.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpaintdevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qrect.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsize.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpalette.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qcolor.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qrgb.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qrgba64.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qbrush.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qmatrix.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpolygon.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qregion.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qdatastream.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qiodevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qline.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtransform.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qimage.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpixelformat.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qpixmap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qshareddata.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qhash.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfont.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfontmetrics.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qfontinfo.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qsizepolicy.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qcursor.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qkeysequence.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qevent.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qvariant.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qmap.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qdebug.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qtextstream.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qlocale.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qset.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qurl.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qurlquery.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qfile.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtCore\qfiledevice.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qvector2d.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qtouchdevice.h \
+		..\Source_Qt_code\Maps\Map.h \
+		..\Source_Qt_code\Maps\WidgetMap.h \
+		..\Source_Qt_code\Maps\Point.h \
+		..\Source_Qt_code\Maps\Angle.h \
+		..\Source_Qt_code\Maps\Border.h \
+		..\Source_Qt_code\mainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QMainWindow \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qmainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qicon.h \
+		ui_mapborders.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapborders.obj ..\Source_Qt_code\mapborders.cpp
 
 mapnomenclature.obj: ..\Source_Qt_code\mapnomenclature.cpp ..\Source_Qt_code\mapnomenclature.h \
 		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QDialog \
@@ -1375,11 +1629,20 @@ startmenu.obj: ..\Source_Qt_code\startmenu.cpp ..\Source_Qt_code\startmenu.h \
 		..\Source_Qt_code\Maps\Point.h \
 		..\Source_Qt_code\Maps\Angle.h \
 		..\Source_Qt_code\Maps\Border.h \
+		..\Source_Qt_code\mapborders.h \
+		..\Source_Qt_code\mainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\QMainWindow \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qmainwindow.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Programms\Qt\5.15.2\wasm_32\include\QtGui\qicon.h \
 		ui_startmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o startmenu.obj ..\Source_Qt_code\startmenu.cpp
 
 maps.js_plugin_import.obj: C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/WebAssembly/maps.js_plugin_import.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maps.js_plugin_import.obj C:/MyWorld/git/MaksimPrudnikau.github.io/Sources/WebAssembly/maps.js_plugin_import.cpp
+
+moc_mapborders.obj: moc_mapborders.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mapborders.obj moc_mapborders.cpp
 
 moc_mapnomenclature.obj: moc_mapnomenclature.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mapnomenclature.obj moc_mapnomenclature.cpp
