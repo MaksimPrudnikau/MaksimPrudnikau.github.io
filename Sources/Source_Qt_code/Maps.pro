@@ -20,7 +20,6 @@ SOURCES += \
     Maps/TwoThousandMap/TwoThousandMap.cpp \
     Maps/WidgetMap.cpp \
     main.cpp \
-    mapborders.cpp \
     mapnomenclature.cpp \
     startmenu.cpp
 
@@ -39,12 +38,10 @@ HEADERS += \
     Maps/TwoHundredThousandMap/TwoHundredThousandMap.h \
     Maps/TwoThousandMap/TwoThousandMap.h \
     Maps/WidgetMap.h \
-    mapborders.h \
     mapnomenclature.h \
     startmenu.h
 
 FORMS += \
-    mapborders.ui \
     mapnomenclature.ui \
     startmenu.ui
 

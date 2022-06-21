@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include "mapnomenclature.h"
-#include "mapborders.h"
 namespace Ui {
 class StartMenu;
 }
@@ -19,12 +18,9 @@ public:
 private slots:
     void on_MapNomenclature_clicked();
 
-    void on_MapBorders_clicked();
-
 private:
     Ui::StartMenu *ui;
     mapnomenclature* mapnomenclature;
-    MapBorders* mapBorders;
 };
 
 #endif // STARTMENU_H
